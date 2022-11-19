@@ -33,6 +33,7 @@ We'll examine the attribute table of the track points:
 note that the recorded time is one hour off to the normal Swiss winter time.
 
 ## Animating track points
+### Basic animation through point visibility based on time
 The simplest animation we can now already do is animating the track points. We turn off the visibility of the "2022-02-12_Unter_Bunderspitz — tracks" layer, because we don't need it for now. We change the symbology of the "2022-02-12_Unter_Bunderspitz — track_points" layer to display with simple, red circles:
 
 ![image](https://user-images.githubusercontent.com/884476/202861591-e467bb12-2c1e-4a43-a6aa-e67966ad3b9d.png)
@@ -43,8 +44,13 @@ and then switch to the "Temporal settings" panel in the layer properties, and co
 
 Close the "Layer properties" dialogue with the "OK" button.
 
+Now open the "Temporal Controller" panel that allows to interact with the animation (Menu "View" --> "Panels" --> "Temporal Controller") and set the following configuration:
 
+* Set "Frame rate" to 25 per second (cogwheel icon on the top-right of the temporal control panel)
+* Set the individual step to 10 seconds
 
+You can try to change frame-rate and step size and experiment with the values. You can interact with the time slider and go back/forth in time.
 
+Note that the animation contains breaks (1: lunch break at about 1900m/10:30, 2: break at about 2100/11:15 to remove skins and prepare for downhill), and obviously, the downhill is faster and the points are spread wider apart, because the temporal interval is always the same.
 
 
