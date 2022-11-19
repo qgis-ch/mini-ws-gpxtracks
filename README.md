@@ -13,3 +13,21 @@ Then we prepare our QGIS project by loading a few Swisstopo WMS layers as backgr
 ![image](https://user-images.githubusercontent.com/884476/202849168-419e32ae-54a9-480f-976b-9bc25255157d.png)
 
 You can download the [SwisstopoBackgroundLayerGroup.qlr](SwisstopoBackgroundLayerGroup.qlr) file and add it through drag and drop from the file manager to your new and empty project.
+
+### Load GPX track file
+
+You can drag and drop the gpx file "[2022-02-12_Unter_Bunderspitz.gpx](2022-02-12_Unter_Bunderspitz.gpx)" on the QGIS canvas in order to load the tracks. From the various layers that are offered, select only the "tracks" and the "track points":
+
+![image](https://user-images.githubusercontent.com/884476/202859444-29fcf9fb-bdff-4a0d-a072-c36b60765de4.png)
+
+Zoom to the data by right-clicking on the layer and selecting "Zoom to Layer".
+
+You should now get two layers:
+* the track containing one LineString geometry (no temporal information)
+* the track points containing the points recorded along the hike. This layer contains elevations, time stamps and the HDOP values of the GPS recording indicating the horizontal precision. The available attributes depend on your GPS device and application. Some are recording less, some more data.
+
+We'll examine the attribute table of the track points:
+
+![image](https://user-images.githubusercontent.com/884476/202859896-fccf1b44-80d4-4ef3-9849-d00c150a1f4e.png)
+
+note that the recorded time is one hour off to the normal Swiss winter time.
