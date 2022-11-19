@@ -68,10 +68,10 @@ and enter the following expression:
 
 ![image](https://user-images.githubusercontent.com/884476/202865005-81477264-85cc-4a13-a82d-1be47fa82883.png)
 
-´´´
+```
 with_variable(
   'time_fraction',
   second(@map_start_time - @animation_start_time) / second(@animation_end_time - @animation_start_time),
   to_string(round($length * @time_fraction,1)) || ';' || to_string(round($length * (1 - @time_fraction),1))
 )
-´´´
+```
