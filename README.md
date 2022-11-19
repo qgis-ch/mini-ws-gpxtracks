@@ -53,6 +53,8 @@ You can try to change frame-rate and step size and experiment with the values. Y
 
 Note that the animation contains breaks (1: lunch break at about 1900m/10:30, 2: break at about 2100/11:15 to remove skins and prepare for downhill), and obviously, the downhill is faster and the points are spread wider apart, because the temporal interval is always the same.
 
+Here is the result style file for the track points [track-points_style1.qml](track-points_style1.qml) containing the steps mentioned above.
+
 ### Linear stroke animation through animation of the stroke dash-pattern
 Next we are trying to progressively draw the track over time. We can use an old technique that was introduced with SVG animation more than a decade ago: animation of the stroke-dash-pattern.
 
@@ -87,3 +89,6 @@ We use the "with_variable" statement, so we can use an intermedium value multipl
 When we now start the animation or use the temporal time slider the visible length of the track should animate linearly.
 
 So far it doesn't take into account different speeds along the track, but assumes a constant speed over the whole track.
+
+Here is the result style file for the GPS track Linestring [track_style1.qml](track_style1.qml) containing the steps mentioned above.
+
