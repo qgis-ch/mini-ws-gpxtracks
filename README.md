@@ -53,4 +53,25 @@ You can try to change frame-rate and step size and experiment with the values. Y
 
 Note that the animation contains breaks (1: lunch break at about 1900m/10:30, 2: break at about 2100/11:15 to remove skins and prepare for downhill), and obviously, the downhill is faster and the points are spread wider apart, because the temporal interval is always the same.
 
+### Linear stroke animation through animation of the stroke dash-pattern
+Next we are trying to progressively draw the track over time. We can use an old technique that was introduced with SVG animation more than a decade ago: animation of the stroke-dash-pattern.
 
+First we set the Configuration in the "Temporal Settings" panel to "Redraw Layer Only":
+
+![image](https://user-images.githubusercontent.com/884476/202864601-579d4172-a12b-40a8-9f53-4f7865728188.png)
+
+Then we change to the "Symbology" panel and then to the "Sub Layer" "Simple Line" and enable the "Use custom dash pattern" setting, switch the units to "Map Units" and click on the expression button:
+
+![image](https://user-images.githubusercontent.com/884476/202864898-d1095d0e-6f1c-4742-afac-180f06bfaec0.png)
+
+and enter the following expression:
+
+![image](https://user-images.githubusercontent.com/884476/202865005-81477264-85cc-4a13-a82d-1be47fa82883.png)
+
+´´´
+with_variable(
+  'time_fraction',
+  second(@map_start_time - @animation_start_time) / second(@animation_end_time - @animation_start_time),
+  to_string(round($length * @time_fraction,1)) || ';' || to_string(round($length * (1 - @time_fraction),1))
+)
+´´´
