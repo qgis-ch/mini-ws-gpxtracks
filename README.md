@@ -75,3 +75,15 @@ with_variable(
   to_string(round($length * @time_fraction,1)) || ';' || to_string(round($length * (1 - @time_fraction),1))
 )
 ```
+
+In this expression we calculate two dash values, resulting in a string with two dash lengths separated by a semicolon. We use the following variables:
+
+* @map_start_time - holding the "current time" of the animation (the variable name might be a bit "misleading", but a map rendering usually has a start and end time)
+* @animation_start_time - the time of the start of the animation
+* @animation_end_time - the time of the end of the animation
+
+We use the "with_variable" statement, so we can use an intermedium value multiple times. We use the "second()" function to convert intervals to seconds. We calculate the current fraction of the duration by dividing the current animation duration so far by the overall duration of the animation. With this fraction between 0 and 1 we can then multiply the fraction value with the length of the GPS track. For the first dash length we use the duration of the animation so far, for the second dash length the remaining duration until the end of the animation. The two values should add up to the total length of the track.
+
+When we now start the animation or use the temporal time slider the visible length of the track should animate linearly.
+
+So far it doesn't take into account different speeds along the track, but assumes a constant speed over the whole track.
