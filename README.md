@@ -73,16 +73,27 @@ and enter the following expression:
 ```
 with_variable(
   'time_fraction',
-  second(@map_start_time - @animation_start_time) / second(@animation_end_time - @animation_start_time),
+  second(@map_start_time - @animation_start_time) / second(@animation_interval),
   to_string(round($length * @time_fraction,1)) || ';' || to_string(round($length * (1 - @time_fraction),1))
 )
 ```
 
-In this expression we calculate two dash values, resulting in a string with two dash lengths separated by a semicolon. We use the following variables:
+In this expression we calculate two dash values, resulting in a string with two dash lengths separated by a semicolon.
 
-* @map_start_time - holding the "current time" of the animation (the variable name might be a bit "misleading", but a map rendering usually has a start and end time)
-* @animation_start_time - the time of the start of the animation
-* @animation_end_time - the time of the end of the animation
+The following animation related variables are available in the context of an animated symbology layer:
+
+* @map_start_time - Start of the map's temporal time range (as a datetime value), holding the "current time" of the animation time-slice (frame) start time (the variable name might be a bit "misleading", but a map rendering usually has a start and end time)
+* @map_end_time - End of the map's temporal time range (as a datetime value), holding the "current time" of the animation time-slice (frame) end time
+* @map_interval - Duration of the map's temporal time range (as an interval value)
+* @frame_duration - Temporal duration of each animation frame (as an interval value)
+* @frame_number - Current frame number during animation playback
+* @frame_rate - Number of frames per second during animation playback
+* @frame_timestep - Frame time step during animation playback
+* @frame_timestep_units - String representation of the frame time step unit during animation playback
+* @animation_start_time - Start of the animation's overall temporal time range (as a datetime value)
+* @animation_end_time - End of the animation's overall temporal time range (as a datetime value)
+* @animation_interval - Duration of the animation's overall temporal time range (as an interval value)
+* 
 
 We use the "with_variable" statement, so we can use an intermedium value multiple times. We use the "second()" function to convert intervals to seconds. We calculate the current fraction of the duration by dividing the current animation duration so far by the overall duration of the animation. With this fraction between 0 and 1 we can then multiply the fraction value with the length of the GPS track. For the first dash length we use the duration of the animation so far, for the second dash length the remaining duration until the end of the animation. The two values should add up to the total length of the track.
 
