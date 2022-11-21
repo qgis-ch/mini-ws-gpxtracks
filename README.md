@@ -116,7 +116,7 @@ I'll explain in the following list the individual steps of the processing model.
 2. First we need to reproject our tracks and track points to a meter based CRS
 3. We extract the individual vertices of the GPS "track" (LINESTRING) to an ordered sequence of individual POINTs. Besides the vertex geometries, the POINTs also get additional attributes, such as vertex index, distance from start, bisector angle of vertex, etc.
 4. We need to join the extracted points with the original track points in order to get the timestamp information of the track points. We match the two data sets using the vertex index: vertex_index = track_seg_point_id. From the original track points we only keep elevation and time (fields ele;time)
-5. In the "Refactor Fields" step we keep or get rid off attributes and calculate a new attribute called "duration_from_start" using the formula  round(second("time" - minimum(time)))
+5. In the "Refactor Fields" step we keep or get rid off attributes and calculate a new attribute called "duration_from_start" using the formula  `round(second("time" - minimum(time)))`
 6. We need to aggregate all values into two arrays using the "array_agg()" function: "distances" (array of decimals holding distances from the start of the track) and durations (array of integers holding durations (seconds) from the start of the track)
 7. We need to join the aggregated arrays to the original track using the "Join by Attributes" algorithm and matching track name fields
 8. We open the result as a new "Memory layer" (not stored at disk) with the layer name "Animated Track"
