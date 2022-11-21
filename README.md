@@ -102,3 +102,8 @@ So far it doesn't take into account different speeds along the track, but assume
 
 Here is the result style file for the GPS track Linestring [track_style1.qml](track_style1.qml) containing the steps mentioned above.
 
+### Linear stroke animation through animation of the stroke dash-pattern, taking into account key time/distance values along the track
+
+We need to improve on the previous result that users linear interpolation with a constant speed, taking into account different speeds (slower uphill, breaks, faster downhill). In order to do this, we need to collect for each vertex of the track the corresponding time and distance and join it with the track data (single record). We can do this by aggregating all values of indiviual vertices into two ordered arrays: one containg temporal data (duration from start of track for each vertex), the other containing the corresponding distances from the start of the track. This requires several steps and algorihtms and can best be done with a processing model.
+
+
