@@ -123,4 +123,33 @@ I'll explain in the following list the individual steps of the processing model.
 
 After running the model we manually load the style [track_style2.qml](track_style2.qml)
 
-This style file contains a formula to pick the time and distance values from the two arrays we calculated as indicated below:
+This style file contains a formula to pick the time and distance values from the two arrays we calculated as indicated below (explanations in the code):
+
+```
+with_variable(
+	'curindex', -- the upper index of the two track points where the current animation frame is within
+	-- result is the index with the key time from the durations array
+	array_length(
+	   array_filter(
+		   durations,
+		   -- we filter the ordered array to see which key time durations are below current animation time		   
+		   @element < @frame_number * second(@frame_duration)
+	   )
+	),
+	with_variable(
+		'segment_fraction', -- fraction derived from current animation time in relation with the two track points
+		(@frame_number * second(@frame_duration) - durations[@curindex-1]) / (durations[@curindex] - durations[@curindex - 1]),
+		with_variable(
+			--calculate the distance in relation with the temporal fraction
+			'curdist',
+			--derive the distance values from the two key distance values in the array and linear interpolation
+			distances[@curindex - 1] + round((distances[@curindex] - distances[@curindex - 1]) * @segment_fraction,1),
+			-- create a string with two distance values separated by a semicolon
+			-- the first dash (to be drawn) is the dash of the line we "traveled" so far
+			-- the second dash is the part to be skipped because it is yet in the "future" of the animation
+			-- we use the total length of the line to substract the part to be skipped
+			to_string(@curdist) || ';' || to_string(round($length - @curdist,1))
+		)
+	)
+)
+```
