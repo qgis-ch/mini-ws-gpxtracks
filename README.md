@@ -106,4 +106,21 @@ Here is the result style file for the GPS track Linestring [track_style1.qml](tr
 
 We need to improve on the previous result that users linear interpolation with a constant speed, taking into account different speeds (slower uphill, breaks, faster downhill). In order to do this, we need to collect for each vertex of the track the corresponding time and distance and join it with the track data (single record). We can do this by aggregating all values of indiviual vertices into two ordered arrays: one containg temporal data (duration from start of track for each vertex), the other containing the corresponding distances from the start of the track. This requires several steps and algorihtms and can best be done with a processing model.
 
+![image](https://user-images.githubusercontent.com/884476/202984328-84cb08e4-6e23-4650-b160-02044bcebc61.png)
 
+You can download the prepared processing model [track_processing.model3](track_processing.model3) here.
+
+I'll explain in the following list the individual steps of the processing model.
+
+1. Model inputs: we have three model inputs: the GPS "track" (LINESTRING), the GPS "track points" (POINTS) and a "Target CRS".
+2. First we need to reproject our tracks and track points to a meter based CRS
+3. We extract the individual vertices of the GPS "track" (LINESTRING) to an ordered sequence of individual POINTs. Besides the vertex geometries, the POINTs also get additional attributes, such as vertex index, distance from start, bisector angle of vertex, etc.
+4. We need to join the extracted points with the original track points in order to get the timestamp information of the track points. We match the two data sets using the vertex index: vertex_index = track_seg_point_id. From the original track points we only keep elevation and time (fields ele;time)
+5. In the "Refactor Fields" step we keep or get rid off attributes and calculate a new attribute called "duration_from_start" using the formula  round(second("time" - minimum(time)))
+6. We need to aggregate all values into two arrays using the "array_agg()" function: "distances" (array of decimals holding distances from the start of the track) and durations (array of integers holding durations (seconds) from the start of the track)
+7. We need to join the aggregated arrays to the original track using the "Join by Attributes" algorithm and matching track name fields
+8. We open the result as a new "Memory layer" (not stored at disk) with the layer name "Animated Track"
+
+After running the model we manually load the style [track_style2.qml](track_style2.qml)
+
+This style file contains a formula to pick the time and distance values from the two arrays we calculated as indicated below:
