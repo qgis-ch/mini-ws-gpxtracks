@@ -153,3 +153,9 @@ with_variable(
 	)
 )
 ```
+
+## Importing photos without georeference information
+While modern cameras and especially smart phones increasingly record GPS position and photo orientation data, there are still many cameras around that don't. However, we can still match the photos based on their time stamp data with track points of a GPS track recorded in parallel when taking the photos. Quite often, there is a time offset involved between the time stamps in the GPS track and the time stamps in the photos that needs to be taken into account. And of course, the photos aren't taken at the exact same time in synchronisation with the GPS track point recordings.
+
+Matching "similar" time stamps sounds rather simple, but while QGIS has some tools to find nearest or closest points in the spatial dimension, there are no such tools available in QGIS processing that allows to join two tables by "similar" attribute data. However, we can map attributes to the "spatial dimension" using "fake coordinates" based on time stamps from both tables and matching them using the "Join attributes by nearest" algorithm. In fact, if we use the time stamps (epochs) for east and north coordinate  pair values, the time stamps will end up along a "line", but we can still use the algorithm to find pairs of two closest features in both tables.
+
