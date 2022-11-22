@@ -1,0 +1,976 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option name="children" type="Map">
+    <Option name="native:createpointslayerfromtable_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:createpointslayerfromtable" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="Add pseudo geometries based on time (epoch) values" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1031.5133942991647" name="component_pos_x" type="double"/>
+        <Option value="431.48261151593624" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Create points layer from photo table" name="component_description" type="QString"/>
+      <Option value="52.87109107656528" name="component_height" type="double"/>
+      <Option value="816.2375308108329" name="component_pos_x" type="double"/>
+      <Option value="479.3626850579682" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:createpointslayerfromtable_1" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="false" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:refactorfields_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="MFIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="TARGET_CRS" type="List">
+          <Option type="Map">
+            <Option value="target_crs" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="XFIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="photo_timestamp_epoch" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="YFIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="photo_timestamp_epoch" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="ZFIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:createpointslayerfromtable_2" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:createpointslayerfromtable" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="Add pseudo geometries based on epoch (timestamps)" name="component_description" type="QString"/>
+        <Option value="60.00000000000001" name="component_height" type="double"/>
+        <Option value="790.1239240811411" name="component_pos_x" type="double"/>
+        <Option value="826.3833672655503" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Create points layer from track point table" name="component_description" type="QString"/>
+      <Option value="47.153318307424" name="component_height" type="double"/>
+      <Option value="815.5315019219785" name="component_pos_x" type="double"/>
+      <Option value="662.9031909474043" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:createpointslayerfromtable_2" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="false" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:dropgeometries_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="MFIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="TARGET_CRS" type="List">
+          <Option type="Map">
+            <Option value="target_crs" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="XFIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="time_epoch" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="YFIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="time_epoch" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="ZFIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:createpointslayerfromtable_3" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:createpointslayerfromtable" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="Create actual geometries from original East/North values of track points" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1004.9406759166812" name="component_pos_x" type="double"/>
+        <Option value="902.3997071781973" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Create points layer from final photo table" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="1195.8414316662954" name="component_pos_x" type="double"/>
+      <Option value="873.0566186613996" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:createpointslayerfromtable_3" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:dropgeometries_2" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="MFIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="TARGET_CRS" type="List">
+          <Option type="Map">
+            <Option value="target_crs" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="XFIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="rechtswert" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="YFIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="hochwert" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="ZFIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="ele" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:dropgeometries_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:dropgeometries" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="Drop original geometries" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="500.32003602591647" name="component_pos_x" type="double"/>
+        <Option value="833.564834926607" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Drop geometries Track Points" name="component_description" type="QString"/>
+      <Option value="39.148436430626134" name="component_height" type="double"/>
+      <Option value="651.5656750595632" name="component_pos_x" type="double"/>
+      <Option value="739.5823695138707" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:dropgeometries_1" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:refactorfields_2" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:dropgeometries_2" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:dropgeometries" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="Drop pseudo geometries based on time" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1382.2380882358757" name="component_pos_x" type="double"/>
+        <Option value="708.2484602685573" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Drop geometries photos" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="1167.6945633225478" name="component_pos_x" type="double"/>
+      <Option value="737.0841564758523" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:dropgeometries_2" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="false" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:joinbynearest_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:importphotos_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:importphotos" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="Extract photo information such as filenames" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="521.4457882390649" name="component_pos_x" type="double"/>
+        <Option value="119.7963282914063" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Import geotagged photos" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="369" name="component_pos_x" type="double"/>
+      <Option value="202" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:importphotos_1" name="id" type="QString"/>
+      <Option name="outputs" type="Map">
+        <Option name="Trash photos" type="Map">
+          <Option value="native:importphotos_1" name="child_id" type="QString"/>
+          <Option value="" name="color" type="QString"/>
+          <Option name="comment" type="Map">
+            <Option value="" name="color" type="QString"/>
+            <Option value="" name="component_description" type="QString"/>
+            <Option value="60" name="component_height" type="double"/>
+            <Option value="0" name="component_pos_x" type="double"/>
+            <Option value="0" name="component_pos_y" type="double"/>
+            <Option value="100" name="component_width" type="double"/>
+            <Option value="true" name="outputs_collapsed" type="bool"/>
+            <Option value="true" name="parameters_collapsed" type="bool"/>
+          </Option>
+          <Option value="Trash photos" name="component_description" type="QString"/>
+          <Option value="37.559715639810406" name="component_height" type="double"/>
+          <Option value="618.6364132880512" name="component_pos_x" type="double"/>
+          <Option value="240.71408741736917" name="component_pos_y" type="double"/>
+          <Option value="200" name="component_width" type="double"/>
+          <Option name="default_value" type="Map">
+            <Option value="QgsProcessingOutputLayerDefinition" name="class" type="QString"/>
+            <Option name="create_options" type="Map">
+              <Option value="System" name="fileEncoding" type="QString"/>
+            </Option>
+            <Option name="sink" type="Map">
+              <Option value="true" name="active" type="bool"/>
+              <Option value="1" name="type" type="int"/>
+              <Option value="TEMPORARY_OUTPUT" name="val" type="QString"/>
+            </Option>
+          </Option>
+          <Option value="false" name="mandatory" type="bool"/>
+          <Option value="Trash photos" name="name" type="QString"/>
+          <Option value="OUTPUT" name="output_name" type="QString"/>
+          <Option value="true" name="outputs_collapsed" type="bool"/>
+          <Option value="true" name="parameters_collapsed" type="bool"/>
+        </Option>
+      </Option>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FOLDER" type="List">
+          <Option type="Map">
+            <Option value="photo_folder" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="RECURSIVE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="true" name="static_value" type="bool"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:joinbynearest_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:joinbynearest" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="Join track points to photos that have the closest time stamp" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1279.4044854334898" name="component_pos_x" type="double"/>
+        <Option value="612.5440045165243" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Join attributes by nearest" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="1078.5490493024786" name="component_pos_x" type="double"/>
+      <Option value="650.8958681322075" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:joinbynearest_1" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="false" name="static_value" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="FIELDS_TO_COPY" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:createpointslayerfromtable_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT_2" type="List">
+          <Option type="Map">
+            <Option value="native:createpointslayerfromtable_2" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="MAX_DISTANCE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="NEIGHBORS" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="1" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREFIX" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:refactorfields_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:refactorfields" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="Extract timestamps from exif data" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="906.1890995260665" name="component_pos_x" type="double"/>
+        <Option value="304.6701421800948" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Refactor fields photos" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="701.4445497630331" name="component_pos_x" type="double"/>
+      <Option value="362.2829383886256" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:refactorfields_1" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELDS_MAPPING" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="List">
+              <Option type="Map">
+                <Option value="&quot;photo&quot;" name="expression" type="QString"/>
+                <Option value="0" name="length" type="int"/>
+                <Option value="photo" name="name" type="QString"/>
+                <Option value="0" name="precision" type="int"/>
+                <Option value="0" name="sub_type" type="int"/>
+                <Option value="10" name="type" type="int"/>
+                <Option value="text" name="type_name" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option value="&quot;filename&quot;" name="expression" type="QString"/>
+                <Option value="0" name="length" type="int"/>
+                <Option value="filename" name="name" type="QString"/>
+                <Option value="0" name="precision" type="int"/>
+                <Option value="0" name="sub_type" type="int"/>
+                <Option value="10" name="type" type="int"/>
+                <Option value="text" name="type_name" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option value="&quot;directory&quot;" name="expression" type="QString"/>
+                <Option value="0" name="length" type="int"/>
+                <Option value="directory" name="name" type="QString"/>
+                <Option value="0" name="precision" type="int"/>
+                <Option value="0" name="sub_type" type="int"/>
+                <Option value="10" name="type" type="int"/>
+                <Option value="text" name="type_name" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option value="exif(photo,'Exif.Photo.DateTimeOriginal')" name="expression" type="QString"/>
+                <Option value="0" name="length" type="int"/>
+                <Option value="photo_timestamp" name="name" type="QString"/>
+                <Option value="0" name="precision" type="int"/>
+                <Option value="0" name="sub_type" type="int"/>
+                <Option value="16" name="type" type="int"/>
+                <Option value="datetime" name="type_name" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option value="exif(photo,'Exif.Photo.DateTimeOriginal') + to_interval(@photo_time_offset || ' seconds')" name="expression" type="QString"/>
+                <Option value="0" name="length" type="int"/>
+                <Option value="photo_timestamp_with_offset" name="name" type="QString"/>
+                <Option value="0" name="precision" type="int"/>
+                <Option value="0" name="sub_type" type="int"/>
+                <Option value="16" name="type" type="int"/>
+                <Option value="datetime" name="type_name" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option value="epoch(exif(photo,'Exif.Photo.DateTimeOriginal') + to_interval(@photo_time_offset || ' seconds'))" name="expression" type="QString"/>
+                <Option value="0" name="length" type="int"/>
+                <Option value="photo_timestamp_epoch" name="name" type="QString"/>
+                <Option value="0" name="precision" type="int"/>
+                <Option value="0" name="sub_type" type="int"/>
+                <Option value="4" name="type" type="int"/>
+                <Option value="int8" name="type_name" type="QString"/>
+              </Option>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:importphotos_1" name="child_id" type="QString"/>
+            <Option value="INVALID" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:refactorfields_2" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:refactorfields" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="Extract east/north coordinates and epoch from time stamp" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="387.60632117786827" name="component_pos_x" type="double"/>
+        <Option value="669.9579575464502" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Refactor fields track" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="563.5119744147871" name="component_pos_x" type="double"/>
+      <Option value="641.8694786215273" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:refactorfields_2" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELDS_MAPPING" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="List">
+              <Option type="Map">
+                <Option value="&quot;track_seg_point_id&quot;" name="expression" type="QString"/>
+                <Option value="0" name="length" type="int"/>
+                <Option value="track_seg_point_id" name="name" type="QString"/>
+                <Option value="0" name="precision" type="int"/>
+                <Option value="0" name="sub_type" type="int"/>
+                <Option value="2" name="type" type="int"/>
+                <Option value="integer" name="type_name" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option value="&quot;ele&quot;" name="expression" type="QString"/>
+                <Option value="0" name="length" type="int"/>
+                <Option value="ele" name="name" type="QString"/>
+                <Option value="0" name="precision" type="int"/>
+                <Option value="0" name="sub_type" type="int"/>
+                <Option value="6" name="type" type="int"/>
+                <Option value="double precision" name="type_name" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option value="&quot;time&quot;" name="expression" type="QString"/>
+                <Option value="0" name="length" type="int"/>
+                <Option value="time" name="name" type="QString"/>
+                <Option value="0" name="precision" type="int"/>
+                <Option value="0" name="sub_type" type="int"/>
+                <Option value="16" name="type" type="int"/>
+                <Option value="datetime" name="type_name" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option value="epoch(time)" name="expression" type="QString"/>
+                <Option value="0" name="length" type="int"/>
+                <Option value="time_epoch" name="name" type="QString"/>
+                <Option value="0" name="precision" type="int"/>
+                <Option value="0" name="sub_type" type="int"/>
+                <Option value="4" name="type" type="int"/>
+                <Option value="int8" name="type_name" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option value="&quot;hdop&quot;" name="expression" type="QString"/>
+                <Option value="0" name="length" type="int"/>
+                <Option value="hdop" name="name" type="QString"/>
+                <Option value="0" name="precision" type="int"/>
+                <Option value="0" name="sub_type" type="int"/>
+                <Option value="6" name="type" type="int"/>
+                <Option value="double precision" name="type_name" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option value="$x" name="expression" type="QString"/>
+                <Option value="0" name="length" type="int"/>
+                <Option value="rechtswert" name="name" type="QString"/>
+                <Option value="0" name="precision" type="int"/>
+                <Option value="0" name="sub_type" type="int"/>
+                <Option value="6" name="type" type="int"/>
+                <Option value="double precision" name="type_name" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option value="$y" name="expression" type="QString"/>
+                <Option value="0" name="length" type="int"/>
+                <Option value="hochwert" name="name" type="QString"/>
+                <Option value="0" name="precision" type="int"/>
+                <Option value="0" name="sub_type" type="int"/>
+                <Option value="6" name="type" type="int"/>
+                <Option value="double precision" name="type_name" type="QString"/>
+              </Option>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:reprojectlayer_2" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:reprojectlayer_2" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:reprojectlayer" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1293.4379146919432" name="component_pos_x" type="double"/>
+        <Option value="553.9867298578199" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Reproject layer" name="component_description" type="QString"/>
+      <Option value="35.958767772511806" name="component_height" type="double"/>
+      <Option value="453.55355450236976" name="component_pos_x" type="double"/>
+      <Option value="543.0130331753555" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:reprojectlayer_2" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="track_points" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="OPERATION" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="TARGET_CRS" type="List">
+          <Option type="Map">
+            <Option value="target_crs" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:retainfields_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:retainfields" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="Only keep certain attributes" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1403.6039047715662" name="component_pos_x" type="double"/>
+        <Option value="922.0612082971417" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Retain fields" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="1254.3901720183778" name="component_pos_x" type="double"/>
+      <Option value="979.2741391017506" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:retainfields_1" name="id" type="QString"/>
+      <Option name="outputs" type="Map">
+        <Option name="Geoereferenced photos" type="Map">
+          <Option value="native:retainfields_1" name="child_id" type="QString"/>
+          <Option value="" name="color" type="QString"/>
+          <Option name="comment" type="Map">
+            <Option value="" name="color" type="QString"/>
+            <Option value="" name="component_description" type="QString"/>
+            <Option value="60" name="component_height" type="double"/>
+            <Option value="0" name="component_pos_x" type="double"/>
+            <Option value="0" name="component_pos_y" type="double"/>
+            <Option value="100" name="component_width" type="double"/>
+            <Option value="true" name="outputs_collapsed" type="bool"/>
+            <Option value="true" name="parameters_collapsed" type="bool"/>
+          </Option>
+          <Option value="Geoereferenced photos" name="component_description" type="QString"/>
+          <Option value="30" name="component_height" type="double"/>
+          <Option value="1346.5691678123203" name="component_pos_x" type="double"/>
+          <Option value="1053.993142036536" name="component_pos_y" type="double"/>
+          <Option value="200" name="component_width" type="double"/>
+          <Option name="default_value" type="invalid"/>
+          <Option value="false" name="mandatory" type="bool"/>
+          <Option value="Geoereferenced photos" name="name" type="QString"/>
+          <Option value="OUTPUT" name="output_name" type="QString"/>
+          <Option value="true" name="outputs_collapsed" type="bool"/>
+          <Option value="true" name="parameters_collapsed" type="bool"/>
+        </Option>
+      </Option>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELDS" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="photo" type="QString"/>
+              <Option value="filename" type="QString"/>
+              <Option value="directory" type="QString"/>
+              <Option value="photo_timestamp" type="QString"/>
+              <Option value="photo_timestamp_with_offset" type="QString"/>
+              <Option value="track_seg_point_id" type="QString"/>
+              <Option value="ele" type="QString"/>
+              <Option value="time" type="QString"/>
+              <Option value="hdop" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:createpointslayerfromtable_3" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option name="designerParameterValues" type="Map">
+    <Option name="georeferenced_photos" type="QgsProcessingOutputLayerDefinition">
+      <Option type="Map">
+        <Option name="create_options" type="Map">
+          <Option value="System" name="fileEncoding" type="QString"/>
+        </Option>
+        <Option name="sink" type="Map">
+          <Option value="true" name="active" type="bool"/>
+          <Option value="1" name="type" type="int"/>
+          <Option value="TEMPORARY_OUTPUT" name="val" type="QString"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option value="/home/bjsvwneu/fotos/originale/2022/adelboden_bonderalp_uf-der-gletti_2022-02-12/jpeg_medium" name="photo_folder" type="QString"/>
+    <Option name="target_crs" type="QgsCoordinateReferenceSystem">
+      <spatialrefsys nativeFormat="Wkt">
+        <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Cadastre, engineering survey, topographic mapping (large and medium scale)."],AREA["Liechtenstein; Switzerland."],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
+        <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+        <srsid>47</srsid>
+        <srid>2056</srid>
+        <authid>EPSG:2056</authid>
+        <description>CH1903+ / LV95</description>
+        <projectionacronym>somerc</projectionacronym>
+        <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </Option>
+    <Option value="track_points_bbc85ee7_5016_4885_b6ee_3b9b83b0ee40" name="track_points" type="QString"/>
+    <Option name="trash_photos" type="QgsProcessingOutputLayerDefinition">
+      <Option type="Map">
+        <Option name="create_options" type="Map">
+          <Option value="System" name="fileEncoding" type="QString"/>
+        </Option>
+        <Option name="sink" type="Map">
+          <Option value="true" name="active" type="bool"/>
+          <Option value="1" name="type" type="int"/>
+          <Option value="TEMPORARY_OUTPUT" name="val" type="QString"/>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option name="groupBoxes"/>
+  <Option name="help"/>
+  <Option value="Version2" name="internal_version" type="QString"/>
+  <Option name="modelVariables"/>
+  <Option value="" name="model_group" type="QString"/>
+  <Option value="Photo Import" name="model_name" type="QString"/>
+  <Option name="parameterDefinitions" type="Map">
+    <Option name="geoereferenced_photos" type="Map">
+      <Option value="true" name="create_by_default" type="bool"/>
+      <Option value="-1" name="data_type" type="int"/>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option value="Geoereferenced photos" name="description" type="QString"/>
+      <Option value="0" name="flags" type="int"/>
+      <Option value="" name="help" type="QString"/>
+      <Option name="metadata" type="Map">
+        <Option value="native:retainfields_1" name="_modelChildId" type="QString"/>
+        <Option value="Geoereferenced photos" name="_modelChildOutputName" type="QString"/>
+        <Option value="native" name="_modelChildProvider" type="QString"/>
+      </Option>
+      <Option value="geoereferenced_photos" name="name" type="QString"/>
+      <Option value="sink" name="parameter_type" type="QString"/>
+      <Option value="true" name="supports_append" type="bool"/>
+      <Option value="true" name="supports_non_file_outputs" type="bool"/>
+    </Option>
+    <Option name="photo_folder" type="Map">
+      <Option value="1" name="behavior" type="int"/>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option value="Photo_Folder" name="description" type="QString"/>
+      <Option value="" name="extension" type="QString"/>
+      <Option value="All files (*.*)" name="filefilter" type="QString"/>
+      <Option value="0" name="flags" type="int"/>
+      <Option value="" name="help" type="QString"/>
+      <Option name="metadata"/>
+      <Option value="photo_folder" name="name" type="QString"/>
+      <Option value="file" name="parameter_type" type="QString"/>
+    </Option>
+    <Option name="photo_time_offset" type="Map">
+      <Option value="0" name="data_type" type="int"/>
+      <Option value="-4370" name="default" type="double"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option value="Photo Time Offset" name="description" type="QString"/>
+      <Option value="0" name="flags" type="int"/>
+      <Option value="" name="help" type="QString"/>
+      <Option value="1.7976931348623157e+308" name="max" type="double"/>
+      <Option name="metadata"/>
+      <Option value="-1.7976931348623157e+308" name="min" type="double"/>
+      <Option value="photo_time_offset" name="name" type="QString"/>
+      <Option value="number" name="parameter_type" type="QString"/>
+    </Option>
+    <Option name="target_crs" type="Map">
+      <Option value="EPSG:2056" name="default" type="QString"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option value="Target CRS" name="description" type="QString"/>
+      <Option value="0" name="flags" type="int"/>
+      <Option value="" name="help" type="QString"/>
+      <Option name="metadata"/>
+      <Option value="target_crs" name="name" type="QString"/>
+      <Option value="crs" name="parameter_type" type="QString"/>
+    </Option>
+    <Option name="track_points" type="Map">
+      <Option name="data_types" type="List">
+        <Option value="0" type="int"/>
+      </Option>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option value="Track Points" name="description" type="QString"/>
+      <Option value="0" name="flags" type="int"/>
+      <Option value="" name="help" type="QString"/>
+      <Option name="metadata"/>
+      <Option value="track_points" name="name" type="QString"/>
+      <Option value="source" name="parameter_type" type="QString"/>
+    </Option>
+    <Option name="trash_photos" type="Map">
+      <Option value="true" name="create_by_default" type="bool"/>
+      <Option value="0" name="data_type" type="int"/>
+      <Option name="default" type="QgsProcessingOutputLayerDefinition">
+        <Option type="Map">
+          <Option name="create_options" type="Map">
+            <Option value="System" name="fileEncoding" type="QString"/>
+          </Option>
+          <Option name="sink" type="Map">
+            <Option value="true" name="active" type="bool"/>
+            <Option value="1" name="type" type="int"/>
+            <Option value="TEMPORARY_OUTPUT" name="val" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+      <Option name="defaultGui" type="invalid"/>
+      <Option value="Trash photos" name="description" type="QString"/>
+      <Option value="8" name="flags" type="int"/>
+      <Option value="" name="help" type="QString"/>
+      <Option name="metadata" type="Map">
+        <Option value="native:importphotos_1" name="_modelChildId" type="QString"/>
+        <Option value="Trash photos" name="_modelChildOutputName" type="QString"/>
+        <Option value="native" name="_modelChildProvider" type="QString"/>
+      </Option>
+      <Option value="trash_photos" name="name" type="QString"/>
+      <Option value="sink" name="parameter_type" type="QString"/>
+      <Option value="false" name="supports_append" type="bool"/>
+      <Option value="true" name="supports_non_file_outputs" type="bool"/>
+    </Option>
+  </Option>
+  <Option name="parameterOrder"/>
+  <Option name="parameters" type="Map">
+    <Option name="photo_folder" type="Map">
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="320" name="component_pos_x" type="double"/>
+        <Option value="15" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="photo_folder" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="144" name="component_pos_x" type="double"/>
+      <Option value="51" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option value="photo_folder" name="name" type="QString"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+    </Option>
+    <Option name="photo_time_offset" type="Map">
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="564" name="component_pos_x" type="double"/>
+        <Option value="15" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="photo_time_offset" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="135.13744075829385" name="component_pos_x" type="double"/>
+      <Option value="612.3255924170617" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option value="photo_time_offset" name="name" type="QString"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+    </Option>
+    <Option name="target_crs" type="Map">
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="192.23661176034702" name="component_pos_x" type="double"/>
+        <Option value="308.5505626997237" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="target_crs" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="136.41469194312796" name="component_pos_x" type="double"/>
+      <Option value="542.6819905213271" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option value="target_crs" name="name" type="QString"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+    </Option>
+    <Option name="track_points" type="Map">
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="648.0241706161138" name="component_pos_x" type="double"/>
+        <Option value="226.10710900473936" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="track_points" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="137.0767772511848" name="component_pos_x" type="double"/>
+      <Option value="457.27298578199054" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option value="track_points" name="name" type="QString"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+    </Option>
+  </Option>
+</Option>
