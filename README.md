@@ -186,3 +186,12 @@ Here are a few explanations around the two branches within the model (branch "A"
 
 ## Symbolizing photo data
 ### Using photo thumbnails
+We can use the raster image marker to place photo thumbnails at the corresponding position in the map as follows:
+
+![image](https://user-images.githubusercontent.com/884476/203420628-3684edbf-fe4f-41e4-bb4e-fc25f2982e70.png)
+
+We don't display the medium resolution photos, but use just the small thumbnail representations. The expression to replace the medium photos with small thumbnails is as follows: `replace(photo,'jpeg_medium','jpeg_small')`.
+
+The result will look like this:
+
+![image](https://user-images.githubusercontent.com/884476/203421175-97f6ac4a-9432-4f92-bc51-2070898def03.png)
