@@ -172,7 +172,7 @@ Here are a few explanations around the two branches within the model (branch "A"
 4. "Create points layer from  photo table": this algorithms adds a point geometry column to a "no-geography" attribute table and picks up east and north coordinate values from an existing attribute or expression calculation.
 
 #### Branch B:
-1. we start with the "Track Points" model input, which should correspond to the track point layer loaded from the GPX file.
+1. We start with the "Track Points" model input, which should correspond to the track point layer loaded from the GPX file. The second model input is the "Photo Time Offset" (in seconds), in our case you should use -4370 seconds.
 2. "Reproject track points layer": reproject from EPSG:4326 to a meter based coordinate system (e.g. EPSG:2056 or EPSG:3857), taking into account the "Target CRS" model input holding the target EPSG number.
 3. "Refactor track point fields": here we select the attribute fields we want to keep and get rid of all the other fields holding no useful data. We extract the east ("rechtswert") and north ("hochwert") coordinate values using the `$x` and `$y` expressions.
 4. "Drop geometries Track Points": get rid of the original point geometries - they are now temporarily stored in the fields "rechtswert" and "hochwert" from the previous algorithm.
