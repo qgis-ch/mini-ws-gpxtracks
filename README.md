@@ -154,8 +154,23 @@ with_variable(
 )
 ```
 
-## Importing photos without georeference information
+## Importing photos without georeferencing information
 While modern cameras and especially smart phones increasingly record GPS position and photo orientation data, there are still many cameras around that don't. However, we can still match the photos based on their time stamp data with track points of a GPS track recorded in parallel when taking the photos. Quite often, there is a time offset involved between the time stamps in the GPS track and the time stamps in the photos that needs to be taken into account. And of course, the photos aren't taken at the exact same time in synchronisation with the GPS track point recordings.
 
 Matching "similar" time stamps sounds rather simple, but while QGIS has some tools to find nearest or closest points in the spatial dimension, there are no such tools available in QGIS processing that allows to join two tables by "similar" attribute data. However, we can map attributes to the "spatial dimension" using "fake coordinates" based on time stamps from both tables and matching them using the "Join attributes by nearest" algorithm. In fact, if we use the time stamps (epochs) for east and north coordinate  pair values, the time stamps will end up along a "line", but we can still use the algorithm to find pairs of two closest features in both tables.
 
+Here is the model [photo_import.model3](photo_import.model3) we use to import non-georeference photos. If you already have geo-referenced photos you can use the algorithm "Import geotagged photos" directly and skip all the rest of the model.
+
+![image](https://user-images.githubusercontent.com/884476/203411005-949b72e0-9848-4eb5-a8d4-010f09ad41bf.png)
+
+Here are a few explanations around the two branches within the model (branch "1" starting from the photo folder, branch "2" starting from the Track Points):
+1a: we start with the "Photo_Folder" model input, which corresponds to a folder in the file system containing jpeg photo files.
+1b: "Import geotagged photos": this algorithm reads all image files in a folder and imports photo information into a table. There are two outputs: one for images already containing georeferencing data, and the other for photos not containing georeferencing data. In our case all goes in the non-georeferenced output. Note that although you don't need the "Trash photos" output (results in an empty table in our case), you should not remove it, because otherwise no photos end up in the other output. This is just the way the algorithm is implemented. The other peculiarity is, that the non-georeferenced output doesn't extract the time-stamp EXIF data we need, so we need to extract the time stamp information in a separate step.
+1c: "Refactor fields photos": here we extract the EXIF timestamp information, add the "Photo Time Offset" (in seconds) and calculate an "epoch" value from the corrected time stamp. This can be done with the following expression: `epoch(exif(photo,'Exif.Photo.DateTimeOriginal') + to_interval(@photo_time_offset || ' seconds'))`. Epoch is the duration starting from 1970-01-01 00:00:00 expressed in milliseconds. It is a simple way to accurately represent time in a simple integer value.
+1d: "Create points layer from  photo table": this algorithms adds a point geometry column to a "no-geography" attribute table and picks up east and north coordinate values from an existing attribute or expression calculation.
+
+2a: we start with the "Track Points" model input, which should correspond to the track point layer loaded from the GPX file.
+2b: "Reproject track points layer": reproject from EPSG:4326 to a meter based coordinate system (e.g. EPSG:2056 or EPSG:3857), taking into account the "Target CRS" model input holding the target EPSG number.
+2c: "Refactor track point fields": here we select the attribute fields we want to keep and get rid of all the other fields holding no useful data. We extract the east ("rechtswert") and north ("hochwert") coordinate values using the `$x` and `$y` expressions.
+2d: "Drop geometries Track Points": get rid of the original point geometries - they are now temporarily stored in the fields "rechtswert" and "hochwert" from the previous algorithm.
+2e: "Create points layer from track points table": here we create "pseudo" coordinates based on the epoch values extracted from the time stamps.
