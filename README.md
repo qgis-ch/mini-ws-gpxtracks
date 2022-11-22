@@ -163,14 +163,26 @@ Here is the model [photo_import.model3](photo_import.model3) we use to import no
 
 ![image](https://user-images.githubusercontent.com/884476/203416418-3fc6a9f7-f811-4981-ac28-c4e373a61a6f.png)
 
-Here are a few explanations around the two branches within the model (branch "1" starting from the photo folder, branch "2" starting from the Track Points):
-1a. we start with the "Photo_Folder" model input, which corresponds to a folder in the file system containing jpeg photo files.
-1b. "Import geotagged photos": this algorithm reads all image files in a folder and imports photo information into a table. There are two outputs: one for images already containing georeferencing data, and the other for photos not containing georeferencing data. In our case all goes in the non-georeferenced output. Note that although you don't need the "Trash photos" output (results in an empty table in our case), you should not remove it, because otherwise no photos end up in the other output. This is just the way the algorithm is implemented. The other peculiarity is, that the non-georeferenced output doesn't extract the time-stamp EXIF data we need, so we need to extract the time stamp information in a separate step.
-1c. "Refactor fields photos": here we extract the EXIF timestamp information, add the "Photo Time Offset" (in seconds) and calculate an "epoch" value from the corrected time stamp. This can be done with the following expression: `epoch(exif(photo,'Exif.Photo.DateTimeOriginal') + to_interval(@photo_time_offset || ' seconds'))`. Epoch is the duration starting from 1970-01-01 00:00:00 expressed in milliseconds. It is a simple way to accurately represent time in a simple integer value.
-1d. "Create points layer from  photo table": this algorithms adds a point geometry column to a "no-geography" attribute table and picks up east and north coordinate values from an existing attribute or expression calculation.
+Here are a few explanations around the two branches within the model (branch "A" starting from the photo folder, branch "B" starting from the Track Points, branch "AB" is the combined part of the model after joining by nearest pseudo coordinates):
 
-2a. we start with the "Track Points" model input, which should correspond to the track point layer loaded from the GPX file.
-2b. "Reproject track points layer": reproject from EPSG:4326 to a meter based coordinate system (e.g. EPSG:2056 or EPSG:3857), taking into account the "Target CRS" model input holding the target EPSG number.
-2c. "Refactor track point fields": here we select the attribute fields we want to keep and get rid of all the other fields holding no useful data. We extract the east ("rechtswert") and north ("hochwert") coordinate values using the `$x` and `$y` expressions.
-2d. "Drop geometries Track Points": get rid of the original point geometries - they are now temporarily stored in the fields "rechtswert" and "hochwert" from the previous algorithm.
-2e. "Create points layer from track points table": here we create "pseudo" coordinates based on the epoch values extracted from the time stamps.
+#### Branch A:
+1. we start with the "Photo_Folder" model input, which corresponds to a folder in the file system containing jpeg photo files.
+2. "Import geotagged photos": this algorithm reads all image files in a folder and imports photo information into a table. There are two outputs: one for images already containing georeferencing data, and the other for photos not containing georeferencing data. In our case all goes in the non-georeferenced output. Note that although you don't need the "Trash photos" output (results in an empty table in our case), you should not remove it, because otherwise no photos end up in the other output. This is just the way the algorithm is implemented. The other peculiarity is, that the non-georeferenced output doesn't extract the time-stamp EXIF data we need, so we need to extract the time stamp information in a separate step.
+3. "Refactor fields photos": here we extract the EXIF timestamp information, add the "Photo Time Offset" (in seconds) and calculate an "epoch" value from the corrected time stamp. This can be done with the following expression: `epoch(exif(photo,'Exif.Photo.DateTimeOriginal') + to_interval(@photo_time_offset || ' seconds'))`. Epoch is the duration starting from 1970-01-01 00:00:00 expressed in milliseconds. It is a simple way to accurately represent time in a simple integer value.
+4. "Create points layer from  photo table": this algorithms adds a point geometry column to a "no-geography" attribute table and picks up east and north coordinate values from an existing attribute or expression calculation.
+
+#### Branch B:
+1. we start with the "Track Points" model input, which should correspond to the track point layer loaded from the GPX file.
+2. "Reproject track points layer": reproject from EPSG:4326 to a meter based coordinate system (e.g. EPSG:2056 or EPSG:3857), taking into account the "Target CRS" model input holding the target EPSG number.
+3. "Refactor track point fields": here we select the attribute fields we want to keep and get rid of all the other fields holding no useful data. We extract the east ("rechtswert") and north ("hochwert") coordinate values using the `$x` and `$y` expressions.
+4. "Drop geometries Track Points": get rid of the original point geometries - they are now temporarily stored in the fields "rechtswert" and "hochwert" from the previous algorithm.
+5. "Create points layer from track points table": here we create "pseudo" coordinates based on the epoch values extracted from the time stamps.
+
+#### Combined Branch AB:
+1. "Join attributes by nearest": here we join the branches using the "nearest" pairs of both tables, using the time based pseduo coordinates. Attributes of matching records in branch B are joined to the corresponding photo records from branch A.
+2. "Drop geometrie photos": we can now get rid of the pseudo coordinates, that we don't need anymore after the join.
+3. "Create points layer from final photo table": using the east and north coordinate attributes from the matched track points we can re-create proper point geometries in our target CRS
+4. "Retain fields": we only keep attribute fields we have an interest in.
+
+## Symbolizing photo data
+### Using photo thumbnails
