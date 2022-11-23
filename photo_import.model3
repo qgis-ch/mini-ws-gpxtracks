@@ -423,7 +423,7 @@
       <Option value="" name="color" type="QString"/>
       <Option name="comment" type="Map">
         <Option value="" name="color" type="QString"/>
-        <Option value="Extract timestamps from exif data" name="component_description" type="QString"/>
+        <Option value="Extract timestamps and focal length 35mm from exif data" name="component_description" type="QString"/>
         <Option value="60" name="component_height" type="double"/>
         <Option value="906.1890995260665" name="component_pos_x" type="double"/>
         <Option value="304.6701421800948" name="component_pos_y" type="double"/>
@@ -499,6 +499,15 @@
                 <Option value="0" name="sub_type" type="int"/>
                 <Option value="4" name="type" type="int"/>
                 <Option value="int8" name="type_name" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option value="exif(photo,'Exif.Photo.FocalLengthIn35mmFilm')" name="expression" type="QString"/>
+                <Option value="0" name="length" type="int"/>
+                <Option value="photo_focal_length_35mm" name="name" type="QString"/>
+                <Option value="0" name="precision" type="int"/>
+                <Option value="0" name="sub_type" type="int"/>
+                <Option value="2" name="type" type="int"/>
+                <Option value="integer" name="type_name" type="QString"/>
               </Option>
             </Option>
           </Option>
@@ -686,7 +695,7 @@
       <Option name="dependencies"/>
       <Option value="native:retainfields_1" name="id" type="QString"/>
       <Option name="outputs" type="Map">
-        <Option name="Geoereferenced photos" type="Map">
+        <Option name="Georeferenced photos" type="Map">
           <Option value="native:retainfields_1" name="child_id" type="QString"/>
           <Option value="" name="color" type="QString"/>
           <Option name="comment" type="Map">
@@ -699,14 +708,24 @@
             <Option value="true" name="outputs_collapsed" type="bool"/>
             <Option value="true" name="parameters_collapsed" type="bool"/>
           </Option>
-          <Option value="Geoereferenced photos" name="component_description" type="QString"/>
+          <Option value="Georeferenced photos" name="component_description" type="QString"/>
           <Option value="30" name="component_height" type="double"/>
           <Option value="1346.5691678123203" name="component_pos_x" type="double"/>
           <Option value="1053.993142036536" name="component_pos_y" type="double"/>
           <Option value="200" name="component_width" type="double"/>
-          <Option name="default_value" type="invalid"/>
-          <Option value="false" name="mandatory" type="bool"/>
-          <Option value="Geoereferenced photos" name="name" type="QString"/>
+          <Option name="default_value" type="Map">
+            <Option value="QgsProcessingOutputLayerDefinition" name="class" type="QString"/>
+            <Option name="create_options" type="Map">
+              <Option value="System" name="fileEncoding" type="QString"/>
+            </Option>
+            <Option name="sink" type="Map">
+              <Option value="true" name="active" type="bool"/>
+              <Option value="1" name="type" type="int"/>
+              <Option value="TEMPORARY_OUTPUT" name="val" type="QString"/>
+            </Option>
+          </Option>
+          <Option value="true" name="mandatory" type="bool"/>
+          <Option value="Georeferenced photos" name="name" type="QString"/>
           <Option value="OUTPUT" name="output_name" type="QString"/>
           <Option value="true" name="outputs_collapsed" type="bool"/>
           <Option value="true" name="parameters_collapsed" type="bool"/>
@@ -724,6 +743,7 @@
               <Option value="directory" type="QString"/>
               <Option value="photo_timestamp" type="QString"/>
               <Option value="photo_timestamp_with_offset" type="QString"/>
+              <Option value="photo_focal_length_35mm" type="QString"/>
               <Option value="track_seg_point_id" type="QString"/>
               <Option value="ele" type="QString"/>
               <Option value="time" type="QString"/>
@@ -742,7 +762,7 @@
     </Option>
   </Option>
   <Option name="designerParameterValues" type="Map">
-    <Option name="georeferenced_photos" type="QgsProcessingOutputLayerDefinition">
+    <Option name="geoereferenced_photos" type="QgsProcessingOutputLayerDefinition">
       <Option type="Map">
         <Option name="create_options" type="Map">
           <Option value="System" name="fileEncoding" type="QString"/>
@@ -789,20 +809,31 @@
   <Option value="" name="model_group" type="QString"/>
   <Option value="Photo Import" name="model_name" type="QString"/>
   <Option name="parameterDefinitions" type="Map">
-    <Option name="geoereferenced_photos" type="Map">
+    <Option name="georeferenced_photos" type="Map">
       <Option value="true" name="create_by_default" type="bool"/>
       <Option value="-1" name="data_type" type="int"/>
-      <Option name="default" type="invalid"/>
+      <Option name="default" type="QgsProcessingOutputLayerDefinition">
+        <Option type="Map">
+          <Option name="create_options" type="Map">
+            <Option value="System" name="fileEncoding" type="QString"/>
+          </Option>
+          <Option name="sink" type="Map">
+            <Option value="true" name="active" type="bool"/>
+            <Option value="1" name="type" type="int"/>
+            <Option value="TEMPORARY_OUTPUT" name="val" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
       <Option name="defaultGui" type="invalid"/>
-      <Option value="Geoereferenced photos" name="description" type="QString"/>
+      <Option value="Georeferenced photos" name="description" type="QString"/>
       <Option value="0" name="flags" type="int"/>
       <Option value="" name="help" type="QString"/>
       <Option name="metadata" type="Map">
         <Option value="native:retainfields_1" name="_modelChildId" type="QString"/>
-        <Option value="Geoereferenced photos" name="_modelChildOutputName" type="QString"/>
+        <Option value="Georeferenced photos" name="_modelChildOutputName" type="QString"/>
         <Option value="native" name="_modelChildProvider" type="QString"/>
       </Option>
-      <Option value="geoereferenced_photos" name="name" type="QString"/>
+      <Option value="georeferenced_photos" name="name" type="QString"/>
       <Option value="sink" name="parameter_type" type="QString"/>
       <Option value="true" name="supports_append" type="bool"/>
       <Option value="true" name="supports_non_file_outputs" type="bool"/>
