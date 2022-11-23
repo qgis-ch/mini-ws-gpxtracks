@@ -246,3 +246,52 @@ We set:
 And the full configuration can be loaded from [photos_style2_with_temporal_settings.qml](photos_style2_with_temporal_settings.qml).
 
 ### Show photo orientation and target points
+#### Display rotated camera symbols
+We provided an additional geopackage [additional_photo_data.gpkg](additional_photo_data.gpkg) containing photo information with title and targetpoint (where the photo is looking at). You can drag and drop this geopackage to QGIS to load the layer and then join itto the "Georeferenced photos" layer as follows:
+
+![image](https://user-images.githubusercontent.com/884476/203512858-df5d4645-8fe1-44b7-874e-89b6abcb0cd8.png)
+
+Using this joined data we can then place SVG markers setting a data-defined rotation indicating the direction of view with the following expression:
+
+```
+round(
+	degrees(
+		azimuth(
+			@geometry,
+			make_point(additional_photo_data_target_point_east, additional_photo_data_target_point_north)
+		)
+	),
+	0
+)
+```
+
+The result will look like this:
+
+![image](https://user-images.githubusercontent.com/884476/203513591-eb94f0dd-4b73-4662-b10d-623123b0a71f.png)
+
+and is stored in the QML file [photos_style3_with_oriented_camera-symbols.qml](photos_style3_with_oriented_camera-symbols.qml)
+
+#### Display photo wedges on demand (if selected)
+To create the photo wedges we can use the "wedge_buffer()" expression in combination with a "Geometry Generator" symbol and use the following expression (assuming that the additional photo information table is still joined).
+
+![image](https://user-images.githubusercontent.com/884476/203515062-01416acf-19b1-418b-bf86-1f2759bcbbcd.png)
+
+```
+ wedge_buffer( 
+	@geometry,
+	round(
+		degrees(
+			azimuth(
+				@geometry,
+				make_point(additional_photo_data_target_point_east, additional_photo_data_target_point_north)
+			)
+		),
+		0
+	),
+	photo_focal_length_35mm,
+	distance(
+		@geometry,
+		make_point(additional_photo_data_target_point_east, additional_photo_data_target_point_north)
+	)
+)
+```
