@@ -295,3 +295,6 @@ To create the photo wedges we can use the "wedge_buffer()" expression in combina
 	)
 )
 ```
+Example of two selected photo wedge buffers:
+
+![image](https://user-images.githubusercontent.com/884476/203515684-4550f077-6a6f-4460-b2a7-b922876c418b.png)
