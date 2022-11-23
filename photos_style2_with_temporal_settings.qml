@@ -1,6 +1,6 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
 <qgis simplifyAlgorithm="0" minScale="100000000" labelsEnabled="0" simplifyLocal="1" symbologyReferenceScale="-1" simplifyDrawingTol="1" styleCategories="Symbology|Labeling|Fields|Forms|Actions|MapTips|AttributeTable|Rendering|CustomProperties|GeometryOptions|Relations|Temporal" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" maxScale="0" simplifyDrawingHints="0" version="3.28.1-Firenze">
-  <temporal startField="" durationUnit="min" durationField="" enabled="0" mode="0" fixedDuration="0" startExpression="" endExpression="" limitMode="0" endField="photo_timestamp" accumulate="0">
+  <temporal startField="photo_timestamp_with_offset" durationUnit="min" durationField="" enabled="1" mode="1" fixedDuration="0" startExpression="" endExpression="" limitMode="0" endField="photo_timestamp" accumulate="1">
     <fixedRange>
       <start></start>
       <end></end>
@@ -256,10 +256,10 @@
   <attributeactions>
     <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
   </attributeactions>
-  <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
+  <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="&quot;filename&quot;">
     <columns>
-      <column hidden="0" name="photo" type="field" width="1032"/>
-      <column hidden="0" name="filename" type="field" width="-1"/>
+      <column hidden="0" name="photo" type="field" width="595"/>
+      <column hidden="0" name="filename" type="field" width="618"/>
       <column hidden="0" name="directory" type="field" width="-1"/>
       <column hidden="0" name="photo_timestamp" type="field" width="-1"/>
       <column hidden="0" name="photo_timestamp_with_offset" type="field" width="-1"/>
