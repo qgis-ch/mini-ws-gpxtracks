@@ -1,14 +1,14 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis minScale="100000000" simplifyDrawingHints="0" hasScaleBasedVisibilityFlag="0" labelsEnabled="0" simplifyDrawingTol="1" symbologyReferenceScale="-1" version="3.29.0-Master" styleCategories="Symbology|Labeling|Fields|Forms|Actions|MapTips|AttributeTable|Rendering|CustomProperties|GeometryOptions|Relations|Temporal" simplifyMaxScale="1" simplifyAlgorithm="0" simplifyLocal="1" maxScale="0">
-  <temporal endField="photo_timestamp" endExpression="" limitMode="0" durationUnit="min" mode="0" startField="" enabled="0" startExpression="" fixedDuration="0" durationField="" accumulate="0">
+<qgis simplifyAlgorithm="0" minScale="100000000" labelsEnabled="0" simplifyLocal="1" symbologyReferenceScale="-1" simplifyDrawingTol="1" styleCategories="Symbology|Labeling|Fields|Forms|Actions|MapTips|AttributeTable|Rendering|CustomProperties|GeometryOptions|Relations|Temporal" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" maxScale="0" simplifyDrawingHints="0" version="3.28.1-Firenze">
+  <temporal startField="" durationUnit="min" durationField="" enabled="0" mode="0" fixedDuration="0" startExpression="" endExpression="" limitMode="0" endField="photo_timestamp" accumulate="0">
     <fixedRange>
       <start></start>
       <end></end>
     </fixedRange>
   </temporal>
-  <renderer-v2 forceraster="0" enableorderby="0" type="singleSymbol" referencescale="-1" symbollevels="0">
+  <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0" referencescale="-1">
     <symbols>
-      <symbol alpha="1" clip_to_extent="1" name="0" frame_rate="10" type="marker" force_rhr="0" is_animated="0">
+      <symbol frame_rate="10" alpha="1" is_animated="0" name="0" type="marker" clip_to_extent="1" force_rhr="0">
         <data_defined_properties>
           <Option type="Map">
             <Option value="" name="name" type="QString"/>
@@ -16,7 +16,7 @@
             <Option value="collection" name="type" type="QString"/>
           </Option>
         </data_defined_properties>
-        <layer class="RasterMarker" locked="0" enabled="1" pass="0">
+        <layer locked="0" enabled="1" pass="0" class="RasterMarker">
           <Option type="Map">
             <Option value="1" name="alpha" type="QString"/>
             <Option value="0" name="angle" type="QString"/>
@@ -54,6 +54,9 @@
   <customproperties>
     <Option type="Map">
       <Option value="false" name="OnConvertFormatRegeneratePrimaryKey" type="bool"/>
+      <Option name="dualview/previewExpressions" type="List">
+        <Option value="&quot;filename&quot;" type="QString"/>
+      </Option>
       <Option value="0" name="embeddedWidgets/count" type="int"/>
       <Option name="variableNames"/>
       <Option name="variableValues"/>
@@ -62,127 +65,182 @@
   <blendMode>0</blendMode>
   <featureBlendMode>0</featureBlendMode>
   <layerOpacity>1</layerOpacity>
-  <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
+  <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
     <activeChecks/>
     <checkConfiguration/>
   </geometryOptions>
   <referencedLayers/>
   <fieldConfiguration>
-    <field name="photo" configurationFlags="None">
-      <editWidget type="TextEdit">
+    <field configurationFlags="None" name="photo">
+      <editWidget type="ExternalResource">
         <config>
-          <Option/>
+          <Option type="Map">
+            <Option value="1" name="DocumentViewer" type="int"/>
+            <Option value="0" name="DocumentViewerHeight" type="int"/>
+            <Option value="0" name="DocumentViewerWidth" type="int"/>
+            <Option value="true" name="FileWidget" type="bool"/>
+            <Option value="true" name="FileWidgetButton" type="bool"/>
+            <Option value="" name="FileWidgetFilter" type="QString"/>
+            <Option value="true" name="FullUrl" type="bool"/>
+            <Option name="PropertyCollection" type="Map">
+              <Option value="" name="name" type="QString"/>
+              <Option name="properties"/>
+              <Option value="collection" name="type" type="QString"/>
+            </Option>
+            <Option value="0" name="RelativeStorage" type="int"/>
+            <Option value="" name="StorageAuthConfigId" type="QString"/>
+            <Option value="0" name="StorageMode" type="int"/>
+            <Option value="" name="StorageType" type="QString"/>
+            <Option value="true" name="UseLink" type="bool"/>
+          </Option>
         </config>
       </editWidget>
     </field>
-    <field name="filename" configurationFlags="None">
+    <field configurationFlags="None" name="filename">
       <editWidget type="TextEdit">
         <config>
-          <Option/>
+          <Option type="Map">
+            <Option value="false" name="IsMultiline" type="bool"/>
+            <Option value="false" name="UseHtml" type="bool"/>
+          </Option>
         </config>
       </editWidget>
     </field>
-    <field name="directory" configurationFlags="None">
+    <field configurationFlags="None" name="directory">
       <editWidget type="TextEdit">
         <config>
-          <Option/>
+          <Option type="Map">
+            <Option value="false" name="IsMultiline" type="bool"/>
+            <Option value="false" name="UseHtml" type="bool"/>
+          </Option>
         </config>
       </editWidget>
     </field>
-    <field name="photo_timestamp" configurationFlags="None">
+    <field configurationFlags="None" name="photo_timestamp">
       <editWidget type="DateTime">
         <config>
-          <Option/>
+          <Option type="Map">
+            <Option value="true" name="allow_null" type="bool"/>
+            <Option value="true" name="calendar_popup" type="bool"/>
+            <Option value="d MMM yyyy HH:mm:ss" name="display_format" type="QString"/>
+            <Option value="d MMM yyyy HH:mm:ss" name="field_format" type="QString"/>
+            <Option value="false" name="field_iso_format" type="bool"/>
+          </Option>
         </config>
       </editWidget>
     </field>
-    <field name="photo_timestamp_with_offset" configurationFlags="None">
+    <field configurationFlags="None" name="photo_timestamp_with_offset">
       <editWidget type="DateTime">
         <config>
-          <Option/>
+          <Option type="Map">
+            <Option value="true" name="allow_null" type="bool"/>
+            <Option value="true" name="calendar_popup" type="bool"/>
+            <Option value="d MMM yyyy HH:mm:ss" name="display_format" type="QString"/>
+            <Option value="d MMM yyyy HH:mm:ss" name="field_format" type="QString"/>
+            <Option value="false" name="field_iso_format" type="bool"/>
+          </Option>
         </config>
       </editWidget>
     </field>
-    <field name="track_seg_point_id" configurationFlags="None">
+    <field configurationFlags="None" name="track_seg_point_id">
       <editWidget type="Range">
         <config>
-          <Option/>
+          <Option type="Map">
+            <Option value="true" name="AllowNull" type="bool"/>
+            <Option value="2147483647" name="Max" type="int"/>
+            <Option value="-2147483648" name="Min" type="int"/>
+            <Option value="0" name="Precision" type="int"/>
+            <Option value="1" name="Step" type="int"/>
+            <Option value="SpinBox" name="Style" type="QString"/>
+          </Option>
         </config>
       </editWidget>
     </field>
-    <field name="ele" configurationFlags="None">
+    <field configurationFlags="None" name="ele">
       <editWidget type="TextEdit">
         <config>
-          <Option/>
+          <Option type="Map">
+            <Option value="false" name="IsMultiline" type="bool"/>
+            <Option value="false" name="UseHtml" type="bool"/>
+          </Option>
         </config>
       </editWidget>
     </field>
-    <field name="time" configurationFlags="None">
+    <field configurationFlags="None" name="time">
       <editWidget type="DateTime">
         <config>
-          <Option/>
+          <Option type="Map">
+            <Option value="true" name="allow_null" type="bool"/>
+            <Option value="true" name="calendar_popup" type="bool"/>
+            <Option value="d MMM yyyy HH:mm:ss" name="display_format" type="QString"/>
+            <Option value="d MMM yyyy HH:mm:ss" name="field_format" type="QString"/>
+            <Option value="false" name="field_iso_format" type="bool"/>
+          </Option>
         </config>
       </editWidget>
     </field>
-    <field name="hdop" configurationFlags="None">
+    <field configurationFlags="None" name="hdop">
       <editWidget type="TextEdit">
         <config>
-          <Option/>
+          <Option type="Map">
+            <Option value="false" name="IsMultiline" type="bool"/>
+            <Option value="false" name="UseHtml" type="bool"/>
+          </Option>
         </config>
       </editWidget>
     </field>
   </fieldConfiguration>
   <aliases>
-    <alias name="" field="photo" index="0"/>
-    <alias name="" field="filename" index="1"/>
-    <alias name="" field="directory" index="2"/>
-    <alias name="" field="photo_timestamp" index="3"/>
-    <alias name="" field="photo_timestamp_with_offset" index="4"/>
-    <alias name="" field="track_seg_point_id" index="5"/>
-    <alias name="" field="ele" index="6"/>
-    <alias name="" field="time" index="7"/>
-    <alias name="" field="hdop" index="8"/>
+    <alias index="0" name="Photo" field="photo"/>
+    <alias index="1" name="Filename" field="filename"/>
+    <alias index="2" name="Directory" field="directory"/>
+    <alias index="3" name="Photo timestamp" field="photo_timestamp"/>
+    <alias index="4" name="Photo time stamp corrected with offset" field="photo_timestamp_with_offset"/>
+    <alias index="5" name="Track-Point Sequence ID" field="track_seg_point_id"/>
+    <alias index="6" name="GPS elevation" field="ele"/>
+    <alias index="7" name="GPS time stamp" field="time"/>
+    <alias index="8" name="GPS HDOP value" field="hdop"/>
   </aliases>
   <defaults>
-    <default field="photo" expression="" applyOnUpdate="0"/>
-    <default field="filename" expression="" applyOnUpdate="0"/>
-    <default field="directory" expression="" applyOnUpdate="0"/>
-    <default field="photo_timestamp" expression="" applyOnUpdate="0"/>
-    <default field="photo_timestamp_with_offset" expression="" applyOnUpdate="0"/>
-    <default field="track_seg_point_id" expression="" applyOnUpdate="0"/>
-    <default field="ele" expression="" applyOnUpdate="0"/>
-    <default field="time" expression="" applyOnUpdate="0"/>
-    <default field="hdop" expression="" applyOnUpdate="0"/>
+    <default applyOnUpdate="0" expression="" field="photo"/>
+    <default applyOnUpdate="0" expression="" field="filename"/>
+    <default applyOnUpdate="0" expression="" field="directory"/>
+    <default applyOnUpdate="0" expression="" field="photo_timestamp"/>
+    <default applyOnUpdate="0" expression="" field="photo_timestamp_with_offset"/>
+    <default applyOnUpdate="0" expression="" field="track_seg_point_id"/>
+    <default applyOnUpdate="0" expression="" field="ele"/>
+    <default applyOnUpdate="0" expression="" field="time"/>
+    <default applyOnUpdate="0" expression="" field="hdop"/>
   </defaults>
   <constraints>
-    <constraint constraints="0" notnull_strength="0" field="photo" exp_strength="0" unique_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="filename" exp_strength="0" unique_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="directory" exp_strength="0" unique_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="photo_timestamp" exp_strength="0" unique_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="photo_timestamp_with_offset" exp_strength="0" unique_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="track_seg_point_id" exp_strength="0" unique_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="ele" exp_strength="0" unique_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="time" exp_strength="0" unique_strength="0"/>
-    <constraint constraints="0" notnull_strength="0" field="hdop" exp_strength="0" unique_strength="0"/>
+    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="photo"/>
+    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="filename"/>
+    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="directory"/>
+    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="photo_timestamp"/>
+    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="photo_timestamp_with_offset"/>
+    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="track_seg_point_id"/>
+    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="ele"/>
+    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="time"/>
+    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="hdop"/>
   </constraints>
   <constraintExpressions>
-    <constraint desc="" field="photo" exp=""/>
-    <constraint desc="" field="filename" exp=""/>
-    <constraint desc="" field="directory" exp=""/>
-    <constraint desc="" field="photo_timestamp" exp=""/>
-    <constraint desc="" field="photo_timestamp_with_offset" exp=""/>
-    <constraint desc="" field="track_seg_point_id" exp=""/>
-    <constraint desc="" field="ele" exp=""/>
-    <constraint desc="" field="time" exp=""/>
-    <constraint desc="" field="hdop" exp=""/>
+    <constraint desc="" exp="" field="photo"/>
+    <constraint desc="" exp="" field="filename"/>
+    <constraint desc="" exp="" field="directory"/>
+    <constraint desc="" exp="" field="photo_timestamp"/>
+    <constraint desc="" exp="" field="photo_timestamp_with_offset"/>
+    <constraint desc="" exp="" field="track_seg_point_id"/>
+    <constraint desc="" exp="" field="ele"/>
+    <constraint desc="" exp="" field="time"/>
+    <constraint desc="" exp="" field="hdop"/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
-    <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+    <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
   </attributeactions>
   <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
     <columns>
-      <column hidden="0" name="photo" type="field" width="-1"/>
+      <column hidden="0" name="photo" type="field" width="1032"/>
       <column hidden="0" name="filename" type="field" width="-1"/>
       <column hidden="0" name="directory" type="field" width="-1"/>
       <column hidden="0" name="photo_timestamp" type="field" width="-1"/>
@@ -221,42 +279,120 @@ def my_form_open(dialog, layer, feature):
     control = dialog.findChild(QWidget, "MyLineEdit")
 ]]></editforminitcode>
   <featformsuppress>0</featformsuppress>
-  <editorlayout>generatedlayout</editorlayout>
+  <editorlayout>tablayout</editorlayout>
+  <attributeEditorForm>
+    <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
+      <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+    </labelStyle>
+    <attributeEditorContainer collapsedExpression="" groupBox="1" visibilityExpressionEnabled="0" columnCount="1" collapsed="0" name="Photo" collapsedExpressionEnabled="0" visibilityExpression="" showLabel="1">
+      <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
+        <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+      </labelStyle>
+      <attributeEditorField index="0" name="photo" showLabel="1">
+        <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
+          <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+        </labelStyle>
+      </attributeEditorField>
+      <attributeEditorContainer collapsedExpression="" groupBox="1" visibilityExpressionEnabled="0" columnCount="2" collapsed="0" name="" collapsedExpressionEnabled="0" visibilityExpression="" showLabel="1">
+        <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
+          <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+        </labelStyle>
+        <attributeEditorField index="1" name="filename" showLabel="1">
+          <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
+            <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField index="2" name="directory" showLabel="1">
+          <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
+            <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField index="3" name="photo_timestamp" showLabel="1">
+          <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
+            <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField index="4" name="photo_timestamp_with_offset" showLabel="1">
+          <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
+            <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+      </attributeEditorContainer>
+    </attributeEditorContainer>
+    <attributeEditorContainer collapsedExpression="" groupBox="1" visibilityExpressionEnabled="0" columnCount="2" collapsed="0" name="Track  Point" collapsedExpressionEnabled="0" visibilityExpression="" showLabel="1">
+      <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
+        <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+      </labelStyle>
+      <attributeEditorField index="5" name="track_seg_point_id" showLabel="1">
+        <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
+          <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+        </labelStyle>
+      </attributeEditorField>
+      <attributeEditorField index="8" name="hdop" showLabel="1">
+        <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
+          <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+        </labelStyle>
+      </attributeEditorField>
+      <attributeEditorField index="7" name="time" showLabel="1">
+        <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
+          <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+        </labelStyle>
+      </attributeEditorField>
+      <attributeEditorField index="6" name="ele" showLabel="1">
+        <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
+          <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+        </labelStyle>
+      </attributeEditorField>
+    </attributeEditorContainer>
+  </attributeEditorForm>
   <editable>
     <field name="directory" editable="1"/>
-    <field name="ele" editable="1"/>
+    <field name="ele" editable="0"/>
     <field name="filename" editable="1"/>
-    <field name="hdop" editable="1"/>
+    <field name="hdop" editable="0"/>
     <field name="photo" editable="1"/>
     <field name="photo_timestamp" editable="1"/>
     <field name="photo_timestamp_with_offset" editable="1"/>
-    <field name="time" editable="1"/>
-    <field name="track_seg_point_id" editable="1"/>
+    <field name="time" editable="0"/>
+    <field name="track_seg_point_id" editable="0"/>
   </editable>
   <labelOnTop>
     <field labelOnTop="0" name="directory"/>
     <field labelOnTop="0" name="ele"/>
     <field labelOnTop="0" name="filename"/>
     <field labelOnTop="0" name="hdop"/>
-    <field labelOnTop="0" name="photo"/>
+    <field labelOnTop="1" name="photo"/>
     <field labelOnTop="0" name="photo_timestamp"/>
     <field labelOnTop="0" name="photo_timestamp_with_offset"/>
     <field labelOnTop="0" name="time"/>
     <field labelOnTop="0" name="track_seg_point_id"/>
   </labelOnTop>
   <reuseLastValue>
-    <field name="directory" reuseLastValue="0"/>
-    <field name="ele" reuseLastValue="0"/>
-    <field name="filename" reuseLastValue="0"/>
-    <field name="hdop" reuseLastValue="0"/>
-    <field name="photo" reuseLastValue="0"/>
-    <field name="photo_timestamp" reuseLastValue="0"/>
-    <field name="photo_timestamp_with_offset" reuseLastValue="0"/>
-    <field name="time" reuseLastValue="0"/>
-    <field name="track_seg_point_id" reuseLastValue="0"/>
+    <field reuseLastValue="0" name="directory"/>
+    <field reuseLastValue="0" name="ele"/>
+    <field reuseLastValue="0" name="filename"/>
+    <field reuseLastValue="0" name="hdop"/>
+    <field reuseLastValue="0" name="photo"/>
+    <field reuseLastValue="0" name="photo_timestamp"/>
+    <field reuseLastValue="0" name="photo_timestamp_with_offset"/>
+    <field reuseLastValue="0" name="time"/>
+    <field reuseLastValue="0" name="track_seg_point_id"/>
   </reuseLastValue>
   <dataDefinedFieldProperties/>
   <widgets/>
-  <mapTip></mapTip>
+  <mapTip>&lt;p>&lt;img src="file://[% photo %]" width="500" />&lt;/p>
+&lt;p>
+[% replace(
+  regexp_replace(filename,'\\d+_',''),
+  '_',
+  ' '
+) %]
+&lt;br/>
+Photo taken: 
+[% format_date(
+	photo_timestamp_with_offset + '1 hour',
+	'dd.MM.yyyy hh:mm'
+) %]
+&lt;/p></mapTip>
   <layerGeometryType>0</layerGeometryType>
 </qgis>
