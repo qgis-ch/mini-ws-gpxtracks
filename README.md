@@ -207,17 +207,27 @@ This could look similar to:
 And finally, we can set the "map tip" to display photo and title in a tooltip, using HTML syntax and some expression magic:
 
 ```
+<p><img src="file://[% photo %]" width="500" /></p>
 <p>
-<img src="[% "photo" %]" />
-<br/>
 [% replace(
   regexp_replace(filename,'\\d+_',''),
   '_',
   ' '
 ) %]
+<br/>
+Photo taken: 
+[% format_date(
+	photo_timestamp_with_offset + '1 hour',
+	'dd.MM.yyyy hh:mm'
+) %]
 </p>
 ```
 
-![image](https://user-images.githubusercontent.com/884476/203485375-9213cf32-61a4-41da-85f7-6929b181f8cf.png)
+![image](https://user-images.githubusercontent.com/884476/203487632-6a89b956-5bef-46a9-96a3-10c151a0a50b.png)
 
+and the result would look something like:
+
+![image](https://user-images.githubusercontent.com/884476/203487768-91888b5c-2273-4405-a40b-070faca2344d.png)
+
+The attribute form and map tip configuration is also included in the [photos_style1_thumbnails.qml](photos_style1_thumbnails.qml)
 
