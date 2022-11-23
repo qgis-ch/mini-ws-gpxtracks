@@ -231,3 +231,18 @@ and the result would look something like:
 
 The attribute form and map tip configuration is also included in the [photos_style1_thumbnails.qml](photos_style1_thumbnails.qml)
 
+### Progressively show photo thumbnails based on time
+
+Because our photo data contains time stamps we can use them to display the photos progressively over time, in synchronization with the track animation. To do this, we configure the temporal settings as follows:
+
+![image](https://user-images.githubusercontent.com/884476/203493860-f960441a-c2a9-4af9-a120-1788f049aa51.png)
+
+We set:
+* Configuration: "Single Field with Date/Time"
+* Limits: Include Start, Exclude End" (we don't have an end field, but could theoretically make them disappear after xx seconds using an expression)
+* Field: Photo time stamp corrected with offset
+* Accumulate features over time: enabled (so that the photos stay rendered and don't disappear)
+
+And the full configuration can be loaded from [photos_style2_with_temporal_settings.qml](photos_style2_with_temporal_settings.qml).
+
+### Show photo orientation and target points
