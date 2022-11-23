@@ -195,3 +195,29 @@ We don't display the medium resolution photos, but use just the small thumbnail 
 The result will look like this (QML stlye file: [photos_style1_thumbnails.qml](photos_style1_thumbnails.qml)):
 
 ![image](https://user-images.githubusercontent.com/884476/203421175-97f6ac4a-9432-4f92-bc51-2070898def03.png)
+
+Of course we can improve the attribute editor form with the drag and drop designer functionality:
+* use the attachment widget to display the photo inside the form and offer a URL to open it in an external editor
+* use groups and/or tabs to display widgets in a table next to each other
+
+This could look similar to:
+
+![image](https://user-images.githubusercontent.com/884476/203484081-31d38932-115c-4ed8-a4cf-d9d5641764c0.png)
+
+And finally, we can set the "map tip" to display photo and title in a tooltip, using HTML syntax and some expression magic:
+
+```
+<p>
+<img src="[% "photo" %]" />
+<br/>
+[% replace(
+  regexp_replace(filename,'\\d+_',''),
+  '_',
+  ' '
+) %]
+</p>
+```
+
+![image](https://user-images.githubusercontent.com/884476/203485375-9213cf32-61a4-41da-85f7-6929b181f8cf.png)
+
+
