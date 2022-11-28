@@ -1,104 +1,104 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis simplifyAlgorithm="0" minScale="100000000" labelsEnabled="0" simplifyLocal="1" symbologyReferenceScale="-1" simplifyDrawingTol="1" styleCategories="Symbology|Labeling|Fields|Forms|Actions|MapTips|AttributeTable|Rendering|CustomProperties|GeometryOptions|Relations|Temporal" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" maxScale="0" simplifyDrawingHints="0" version="3.28.1-Firenze">
-  <temporal startField="photo_timestamp" durationUnit="min" durationField="photo_focal_length_35mm" enabled="1" mode="1" fixedDuration="0" startExpression="" endExpression="" limitMode="0" endField="" accumulate="1">
+<qgis styleCategories="Symbology|Labeling|Fields|Forms|Actions|MapTips|AttributeTable|Rendering|CustomProperties|GeometryOptions|Relations|Temporal" maxScale="0" symbologyReferenceScale="-1" hasScaleBasedVisibilityFlag="0" minScale="100000000" simplifyAlgorithm="0" simplifyLocal="1" labelsEnabled="0" version="3.28.1-Firenze" simplifyDrawingHints="0" simplifyDrawingTol="1" simplifyMaxScale="1">
+  <temporal enabled="1" startField="photo_timestamp" fixedDuration="0" durationField="photo_focal_length_35mm" limitMode="0" accumulate="1" mode="1" endExpression="" endField="" startExpression="" durationUnit="min">
     <fixedRange>
       <start></start>
       <end></end>
     </fixedRange>
   </temporal>
-  <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0" referencescale="-1">
+  <renderer-v2 forceraster="0" type="singleSymbol" enableorderby="0" symbollevels="0" referencescale="-1">
     <symbols>
-      <symbol frame_rate="10" alpha="1" is_animated="0" name="0" type="marker" clip_to_extent="1" force_rhr="0">
+      <symbol name="0" alpha="1" frame_rate="10" clip_to_extent="1" is_animated="0" force_rhr="0" type="marker">
         <data_defined_properties>
           <Option type="Map">
-            <Option value="" name="name" type="QString"/>
+            <Option name="name" value="" type="QString"/>
             <Option name="properties"/>
-            <Option value="collection" name="type" type="QString"/>
+            <Option name="type" value="collection" type="QString"/>
           </Option>
         </data_defined_properties>
-        <layer locked="0" enabled="1" pass="0" class="GeometryGenerator">
+        <layer enabled="1" locked="0" class="GeometryGenerator" pass="0">
           <Option type="Map">
-            <Option value="Fill" name="SymbolType" type="QString"/>
-            <Option value=" wedge_buffer( &#xa;&#x9;@geometry,&#xa;&#x9;round(&#xa;&#x9;&#x9;degrees(&#xa;&#x9;&#x9;&#x9;azimuth(&#xa;&#x9;&#x9;&#x9;&#x9;@geometry,&#xa;&#x9;&#x9;&#x9;&#x9;make_point(additional_photo_data_target_point_east, additional_photo_data_target_point_north)&#xa;&#x9;&#x9;&#x9;)&#xa;&#x9;&#x9;),&#xa;&#x9;&#x9;0&#xa;&#x9;),&#xa;&#x9;photo_focal_length_35mm,&#xa;&#x9;distance(&#xa;&#x9;&#x9;@geometry,&#xa;&#x9;&#x9;make_point(additional_photo_data_target_point_east, additional_photo_data_target_point_north)&#xa;&#x9;)&#xa;)" name="geometryModifier" type="QString"/>
-            <Option value="MapUnit" name="units" type="QString"/>
+            <Option name="SymbolType" value="Fill" type="QString"/>
+            <Option name="geometryModifier" value=" wedge_buffer( &#xa;&#x9;@geometry,&#xa;&#x9;round(&#xa;&#x9;&#x9;degrees(&#xa;&#x9;&#x9;&#x9;azimuth(&#xa;&#x9;&#x9;&#x9;&#x9;@geometry,&#xa;&#x9;&#x9;&#x9;&#x9;make_point(additional_photo_data_target_point_east, additional_photo_data_target_point_north)&#xa;&#x9;&#x9;&#x9;)&#xa;&#x9;&#x9;),&#xa;&#x9;&#x9;0&#xa;&#x9;),&#xa;&#x9;photo_angle,&#xa;&#x9;distance(&#xa;&#x9;&#x9;@geometry,&#xa;&#x9;&#x9;make_point(additional_photo_data_target_point_east, additional_photo_data_target_point_north)&#xa;&#x9;)&#xa;)" type="QString"/>
+            <Option name="units" value="MapUnit" type="QString"/>
           </Option>
           <data_defined_properties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option name="name" value="" type="QString"/>
               <Option name="properties" type="Map">
                 <Option name="enabled" type="Map">
-                  <Option value="true" name="active" type="bool"/>
-                  <Option value="is_selected()" name="expression" type="QString"/>
-                  <Option value="3" name="type" type="int"/>
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="is_selected()" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
-              <Option value="collection" name="type" type="QString"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
-          <symbol frame_rate="10" alpha="1" is_animated="0" name="@0@0" type="fill" clip_to_extent="1" force_rhr="0">
+          <symbol name="@0@0" alpha="1" frame_rate="10" clip_to_extent="1" is_animated="0" force_rhr="0" type="fill">
             <data_defined_properties>
               <Option type="Map">
-                <Option value="" name="name" type="QString"/>
+                <Option name="name" value="" type="QString"/>
                 <Option name="properties"/>
-                <Option value="collection" name="type" type="QString"/>
+                <Option name="type" value="collection" type="QString"/>
               </Option>
             </data_defined_properties>
-            <layer locked="0" enabled="1" pass="0" class="SimpleFill">
+            <layer enabled="1" locked="0" class="SimpleFill" pass="0">
               <Option type="Map">
-                <Option value="3x:0,0,0,0,0,0" name="border_width_map_unit_scale" type="QString"/>
-                <Option value="152,0,254,63" name="color" type="QString"/>
-                <Option value="bevel" name="joinstyle" type="QString"/>
-                <Option value="0,0" name="offset" type="QString"/>
-                <Option value="3x:0,0,0,0,0,0" name="offset_map_unit_scale" type="QString"/>
-                <Option value="MM" name="offset_unit" type="QString"/>
-                <Option value="152,0,254,255" name="outline_color" type="QString"/>
-                <Option value="solid" name="outline_style" type="QString"/>
-                <Option value="0.2" name="outline_width" type="QString"/>
-                <Option value="MM" name="outline_width_unit" type="QString"/>
-                <Option value="solid" name="style" type="QString"/>
+                <Option name="border_width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="color" value="152,0,254,63" type="QString"/>
+                <Option name="joinstyle" value="bevel" type="QString"/>
+                <Option name="offset" value="0,0" type="QString"/>
+                <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="offset_unit" value="MM" type="QString"/>
+                <Option name="outline_color" value="152,0,254,255" type="QString"/>
+                <Option name="outline_style" value="solid" type="QString"/>
+                <Option name="outline_width" value="0.2" type="QString"/>
+                <Option name="outline_width_unit" value="MM" type="QString"/>
+                <Option name="style" value="solid" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
-                  <Option value="" name="name" type="QString"/>
+                  <Option name="name" value="" type="QString"/>
                   <Option name="properties"/>
-                  <Option value="collection" name="type" type="QString"/>
+                  <Option name="type" value="collection" type="QString"/>
                 </Option>
               </data_defined_properties>
             </layer>
           </symbol>
         </layer>
-        <layer locked="0" enabled="1" pass="0" class="SvgMarker">
+        <layer enabled="1" locked="0" class="SvgMarker" pass="0">
           <Option type="Map">
-            <Option value="0" name="angle" type="QString"/>
-            <Option value="152,0,254,255" name="color" type="QString"/>
-            <Option value="0" name="fixedAspectRatio" type="QString"/>
-            <Option value="1" name="horizontal_anchor_point" type="QString"/>
-            <Option value="gpsicons/camera.svg" name="name" type="QString"/>
-            <Option value="0,0" name="offset" type="QString"/>
-            <Option value="3x:0,0,0,0,0,0" name="offset_map_unit_scale" type="QString"/>
-            <Option value="MM" name="offset_unit" type="QString"/>
-            <Option value="255,255,255,255" name="outline_color" type="QString"/>
-            <Option value="0" name="outline_width" type="QString"/>
-            <Option value="3x:0,0,0,0,0,0" name="outline_width_map_unit_scale" type="QString"/>
-            <Option value="MM" name="outline_width_unit" type="QString"/>
+            <Option name="angle" value="0" type="QString"/>
+            <Option name="color" value="152,0,254,255" type="QString"/>
+            <Option name="fixedAspectRatio" value="0" type="QString"/>
+            <Option name="horizontal_anchor_point" value="1" type="QString"/>
+            <Option name="name" value="gpsicons/camera.svg" type="QString"/>
+            <Option name="offset" value="0,0" type="QString"/>
+            <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+            <Option name="offset_unit" value="MM" type="QString"/>
+            <Option name="outline_color" value="255,255,255,255" type="QString"/>
+            <Option name="outline_width" value="0" type="QString"/>
+            <Option name="outline_width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+            <Option name="outline_width_unit" value="MM" type="QString"/>
             <Option name="parameters"/>
-            <Option value="diameter" name="scale_method" type="QString"/>
-            <Option value="6" name="size" type="QString"/>
-            <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
-            <Option value="MM" name="size_unit" type="QString"/>
-            <Option value="1" name="vertical_anchor_point" type="QString"/>
+            <Option name="scale_method" value="diameter" type="QString"/>
+            <Option name="size" value="6" type="QString"/>
+            <Option name="size_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+            <Option name="size_unit" value="MM" type="QString"/>
+            <Option name="vertical_anchor_point" value="1" type="QString"/>
           </Option>
           <data_defined_properties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option name="name" value="" type="QString"/>
               <Option name="properties" type="Map">
                 <Option name="angle" type="Map">
-                  <Option value="true" name="active" type="bool"/>
-                  <Option value="round(&#xa;&#x9;degrees(&#xa;&#x9;&#x9;azimuth(&#xa;&#x9;&#x9;&#x9;@geometry,&#xa;&#x9;&#x9;&#x9;make_point(additional_photo_data_target_point_east, additional_photo_data_target_point_north)&#xa;&#x9;&#x9;)&#xa;&#x9;),&#xa;&#x9;0&#xa;)" name="expression" type="QString"/>
-                  <Option value="3" name="type" type="int"/>
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="round(&#xa;&#x9;degrees(&#xa;&#x9;&#x9;azimuth(&#xa;&#x9;&#x9;&#x9;@geometry,&#xa;&#x9;&#x9;&#x9;make_point(additional_photo_data_target_point_east, additional_photo_data_target_point_north)&#xa;&#x9;&#x9;)&#xa;&#x9;),&#xa;&#x9;0&#xa;)" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
-              <Option value="collection" name="type" type="QString"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
           </data_defined_properties>
         </layer>
@@ -109,11 +109,11 @@
   </renderer-v2>
   <customproperties>
     <Option type="Map">
-      <Option value="false" name="OnConvertFormatRegeneratePrimaryKey" type="bool"/>
+      <Option name="OnConvertFormatRegeneratePrimaryKey" value="false" type="bool"/>
       <Option name="dualview/previewExpressions" type="List">
         <Option value="&quot;filename&quot;" type="QString"/>
       </Option>
-      <Option value="0" name="embeddedWidgets/count" type="int"/>
+      <Option name="embeddedWidgets/count" value="0" type="int"/>
       <Option name="variableNames"/>
       <Option name="variableValues"/>
     </Option>
@@ -121,263 +121,275 @@
   <blendMode>0</blendMode>
   <featureBlendMode>0</featureBlendMode>
   <layerOpacity>1</layerOpacity>
-  <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+  <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
     <activeChecks/>
     <checkConfiguration/>
   </geometryOptions>
   <referencedLayers/>
   <fieldConfiguration>
-    <field configurationFlags="None" name="photo">
+    <field name="photo" configurationFlags="None">
       <editWidget type="ExternalResource">
         <config>
           <Option type="Map">
-            <Option value="1" name="DocumentViewer" type="int"/>
-            <Option value="0" name="DocumentViewerHeight" type="int"/>
-            <Option value="0" name="DocumentViewerWidth" type="int"/>
-            <Option value="true" name="FileWidget" type="bool"/>
-            <Option value="true" name="FileWidgetButton" type="bool"/>
-            <Option value="" name="FileWidgetFilter" type="QString"/>
-            <Option value="true" name="FullUrl" type="bool"/>
+            <Option name="DocumentViewer" value="1" type="int"/>
+            <Option name="DocumentViewerHeight" value="0" type="int"/>
+            <Option name="DocumentViewerWidth" value="0" type="int"/>
+            <Option name="FileWidget" value="true" type="bool"/>
+            <Option name="FileWidgetButton" value="true" type="bool"/>
+            <Option name="FileWidgetFilter" value="" type="QString"/>
+            <Option name="FullUrl" value="true" type="bool"/>
             <Option name="PropertyCollection" type="Map">
-              <Option value="" name="name" type="QString"/>
-              <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="invalid"/>
+              <Option name="type" value="collection" type="QString"/>
             </Option>
-            <Option value="0" name="RelativeStorage" type="int"/>
-            <Option value="" name="StorageAuthConfigId" type="QString"/>
-            <Option value="0" name="StorageMode" type="int"/>
-            <Option value="" name="StorageType" type="QString"/>
-            <Option value="true" name="UseLink" type="bool"/>
+            <Option name="RelativeStorage" value="0" type="int"/>
+            <Option name="StorageAuthConfigId" value="" type="QString"/>
+            <Option name="StorageMode" value="0" type="int"/>
+            <Option name="StorageType" value="" type="QString"/>
+            <Option name="UseLink" value="true" type="bool"/>
           </Option>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="None" name="filename">
+    <field name="filename" configurationFlags="None">
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="None" name="directory">
+    <field name="directory" configurationFlags="None">
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="None" name="photo_timestamp">
+    <field name="photo_timestamp" configurationFlags="None">
       <editWidget type="DateTime">
         <config>
           <Option type="Map">
-            <Option value="true" name="allow_null" type="bool"/>
-            <Option value="true" name="calendar_popup" type="bool"/>
-            <Option value="d MMM yyyy HH:mm:ss" name="display_format" type="QString"/>
-            <Option value="d MMM yyyy HH:mm:ss" name="field_format" type="QString"/>
-            <Option value="false" name="field_iso_format" type="bool"/>
+            <Option name="allow_null" value="true" type="bool"/>
+            <Option name="calendar_popup" value="true" type="bool"/>
+            <Option name="display_format" value="d MMM yyyy HH:mm:ss" type="QString"/>
+            <Option name="field_format" value="d MMM yyyy HH:mm:ss" type="QString"/>
+            <Option name="field_iso_format" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="None" name="photo_timestamp_with_offset">
+    <field name="photo_timestamp_with_offset" configurationFlags="None">
       <editWidget type="DateTime">
         <config>
           <Option type="Map">
-            <Option value="true" name="allow_null" type="bool"/>
-            <Option value="true" name="calendar_popup" type="bool"/>
-            <Option value="d MMM yyyy HH:mm:ss" name="display_format" type="QString"/>
-            <Option value="d MMM yyyy HH:mm:ss" name="field_format" type="QString"/>
-            <Option value="false" name="field_iso_format" type="bool"/>
+            <Option name="allow_null" value="true" type="bool"/>
+            <Option name="calendar_popup" value="true" type="bool"/>
+            <Option name="display_format" value="d MMM yyyy HH:mm:ss" type="QString"/>
+            <Option name="field_format" value="d MMM yyyy HH:mm:ss" type="QString"/>
+            <Option name="field_iso_format" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="None" name="photo_focal_length_35mm">
+    <field name="photo_focal_length_35mm" configurationFlags="None">
       <editWidget type="Range">
         <config>
           <Option type="Map">
-            <Option value="true" name="AllowNull" type="bool"/>
-            <Option value="2147483647" name="Max" type="int"/>
-            <Option value="-2147483648" name="Min" type="int"/>
-            <Option value="0" name="Precision" type="int"/>
-            <Option value="1" name="Step" type="int"/>
-            <Option value="SpinBox" name="Style" type="QString"/>
+            <Option name="AllowNull" value="true" type="bool"/>
+            <Option name="Max" value="2147483647" type="int"/>
+            <Option name="Min" value="-2147483648" type="int"/>
+            <Option name="Precision" value="0" type="int"/>
+            <Option name="Step" value="1" type="int"/>
+            <Option name="Style" value="SpinBox" type="QString"/>
           </Option>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="None" name="track_seg_point_id">
+    <field name="photo_angle" configurationFlags="None">
+      <editWidget type="Range">
+        <config>
+          <Option/>
+        </config>
+      </editWidget>
+    </field>
+    <field name="track_seg_point_id" configurationFlags="None">
       <editWidget type="Range">
         <config>
           <Option type="Map">
-            <Option value="true" name="AllowNull" type="bool"/>
-            <Option value="2147483647" name="Max" type="int"/>
-            <Option value="-2147483648" name="Min" type="int"/>
-            <Option value="0" name="Precision" type="int"/>
-            <Option value="1" name="Step" type="int"/>
-            <Option value="SpinBox" name="Style" type="QString"/>
+            <Option name="AllowNull" value="true" type="bool"/>
+            <Option name="Max" value="2147483647" type="int"/>
+            <Option name="Min" value="-2147483648" type="int"/>
+            <Option name="Precision" value="0" type="int"/>
+            <Option name="Step" value="1" type="int"/>
+            <Option name="Style" value="SpinBox" type="QString"/>
           </Option>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="None" name="ele">
+    <field name="ele" configurationFlags="None">
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="None" name="time">
+    <field name="time" configurationFlags="None">
       <editWidget type="DateTime">
         <config>
           <Option type="Map">
-            <Option value="true" name="allow_null" type="bool"/>
-            <Option value="true" name="calendar_popup" type="bool"/>
-            <Option value="d MMM yyyy HH:mm:ss" name="display_format" type="QString"/>
-            <Option value="d MMM yyyy HH:mm:ss" name="field_format" type="QString"/>
-            <Option value="false" name="field_iso_format" type="bool"/>
+            <Option name="allow_null" value="true" type="bool"/>
+            <Option name="calendar_popup" value="true" type="bool"/>
+            <Option name="display_format" value="d MMM yyyy HH:mm:ss" type="QString"/>
+            <Option name="field_format" value="d MMM yyyy HH:mm:ss" type="QString"/>
+            <Option name="field_iso_format" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="None" name="hdop">
+    <field name="hdop" configurationFlags="None">
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="None" name="additional_photo_data_photo_title">
+    <field name="additional_photo_data_photo_title" configurationFlags="None">
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option name="IsMultiline" value="false" type="bool"/>
+            <Option name="UseHtml" value="false" type="bool"/>
           </Option>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="None" name="additional_photo_data_target_point_east">
+    <field name="additional_photo_data_target_point_east" configurationFlags="None">
       <editWidget type="Range">
         <config>
           <Option type="Map">
-            <Option value="true" name="AllowNull" type="bool"/>
-            <Option value="2147483647" name="Max" type="int"/>
-            <Option value="-2147483648" name="Min" type="int"/>
-            <Option value="0" name="Precision" type="int"/>
-            <Option value="1" name="Step" type="int"/>
-            <Option value="SpinBox" name="Style" type="QString"/>
+            <Option name="AllowNull" value="true" type="bool"/>
+            <Option name="Max" value="2147483647" type="int"/>
+            <Option name="Min" value="-2147483648" type="int"/>
+            <Option name="Precision" value="0" type="int"/>
+            <Option name="Step" value="1" type="int"/>
+            <Option name="Style" value="SpinBox" type="QString"/>
           </Option>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="None" name="additional_photo_data_target_point_north">
+    <field name="additional_photo_data_target_point_north" configurationFlags="None">
       <editWidget type="Range">
         <config>
           <Option type="Map">
-            <Option value="true" name="AllowNull" type="bool"/>
-            <Option value="2147483647" name="Max" type="int"/>
-            <Option value="-2147483648" name="Min" type="int"/>
-            <Option value="0" name="Precision" type="int"/>
-            <Option value="1" name="Step" type="int"/>
-            <Option value="SpinBox" name="Style" type="QString"/>
+            <Option name="AllowNull" value="true" type="bool"/>
+            <Option name="Max" value="2147483647" type="int"/>
+            <Option name="Min" value="-2147483648" type="int"/>
+            <Option name="Precision" value="0" type="int"/>
+            <Option name="Step" value="1" type="int"/>
+            <Option name="Style" value="SpinBox" type="QString"/>
           </Option>
         </config>
       </editWidget>
     </field>
   </fieldConfiguration>
   <aliases>
-    <alias index="0" name="Photo" field="photo"/>
-    <alias index="1" name="Filename" field="filename"/>
-    <alias index="2" name="Directory" field="directory"/>
-    <alias index="3" name="Photo timestamp" field="photo_timestamp"/>
-    <alias index="4" name="Photo time stamp corrected with offset" field="photo_timestamp_with_offset"/>
-    <alias index="5" name="Photo focal length in 35mm" field="photo_focal_length_35mm"/>
-    <alias index="6" name="Track-Point Sequence ID" field="track_seg_point_id"/>
-    <alias index="7" name="GPS elevation" field="ele"/>
-    <alias index="8" name="GPS time stamp" field="time"/>
-    <alias index="9" name="GPS HDOP value" field="hdop"/>
-    <alias index="10" name="" field="additional_photo_data_photo_title"/>
-    <alias index="11" name="" field="additional_photo_data_target_point_east"/>
-    <alias index="12" name="" field="additional_photo_data_target_point_north"/>
+    <alias name="Photo" index="0" field="photo"/>
+    <alias name="Filename" index="1" field="filename"/>
+    <alias name="Directory" index="2" field="directory"/>
+    <alias name="Photo timestamp" index="3" field="photo_timestamp"/>
+    <alias name="Photo time stamp corrected with offset" index="4" field="photo_timestamp_with_offset"/>
+    <alias name="Photo focal length in 35mm" index="5" field="photo_focal_length_35mm"/>
+    <alias name="" index="6" field="photo_angle"/>
+    <alias name="Track-Point Sequence ID" index="7" field="track_seg_point_id"/>
+    <alias name="GPS elevation" index="8" field="ele"/>
+    <alias name="GPS time stamp" index="9" field="time"/>
+    <alias name="GPS HDOP value" index="10" field="hdop"/>
+    <alias name="" index="11" field="additional_photo_data_photo_title"/>
+    <alias name="" index="12" field="additional_photo_data_target_point_east"/>
+    <alias name="" index="13" field="additional_photo_data_target_point_north"/>
   </aliases>
   <defaults>
-    <default applyOnUpdate="0" expression="" field="photo"/>
-    <default applyOnUpdate="0" expression="" field="filename"/>
-    <default applyOnUpdate="0" expression="" field="directory"/>
-    <default applyOnUpdate="0" expression="" field="photo_timestamp"/>
-    <default applyOnUpdate="0" expression="" field="photo_timestamp_with_offset"/>
-    <default applyOnUpdate="0" expression="" field="photo_focal_length_35mm"/>
-    <default applyOnUpdate="0" expression="" field="track_seg_point_id"/>
-    <default applyOnUpdate="0" expression="" field="ele"/>
-    <default applyOnUpdate="0" expression="" field="time"/>
-    <default applyOnUpdate="0" expression="" field="hdop"/>
-    <default applyOnUpdate="0" expression="" field="additional_photo_data_photo_title"/>
-    <default applyOnUpdate="0" expression="" field="additional_photo_data_target_point_east"/>
-    <default applyOnUpdate="0" expression="" field="additional_photo_data_target_point_north"/>
+    <default expression="" applyOnUpdate="0" field="photo"/>
+    <default expression="" applyOnUpdate="0" field="filename"/>
+    <default expression="" applyOnUpdate="0" field="directory"/>
+    <default expression="" applyOnUpdate="0" field="photo_timestamp"/>
+    <default expression="" applyOnUpdate="0" field="photo_timestamp_with_offset"/>
+    <default expression="" applyOnUpdate="0" field="photo_focal_length_35mm"/>
+    <default expression="" applyOnUpdate="0" field="photo_angle"/>
+    <default expression="" applyOnUpdate="0" field="track_seg_point_id"/>
+    <default expression="" applyOnUpdate="0" field="ele"/>
+    <default expression="" applyOnUpdate="0" field="time"/>
+    <default expression="" applyOnUpdate="0" field="hdop"/>
+    <default expression="" applyOnUpdate="0" field="additional_photo_data_photo_title"/>
+    <default expression="" applyOnUpdate="0" field="additional_photo_data_target_point_east"/>
+    <default expression="" applyOnUpdate="0" field="additional_photo_data_target_point_north"/>
   </defaults>
   <constraints>
-    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="photo"/>
-    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="filename"/>
-    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="directory"/>
-    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="photo_timestamp"/>
-    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="photo_timestamp_with_offset"/>
-    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="photo_focal_length_35mm"/>
-    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="track_seg_point_id"/>
-    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="ele"/>
-    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="time"/>
-    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="hdop"/>
-    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="additional_photo_data_photo_title"/>
-    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="additional_photo_data_target_point_east"/>
-    <constraint unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0" field="additional_photo_data_target_point_north"/>
+    <constraint constraints="0" field="photo" notnull_strength="0" unique_strength="0" exp_strength="0"/>
+    <constraint constraints="0" field="filename" notnull_strength="0" unique_strength="0" exp_strength="0"/>
+    <constraint constraints="0" field="directory" notnull_strength="0" unique_strength="0" exp_strength="0"/>
+    <constraint constraints="0" field="photo_timestamp" notnull_strength="0" unique_strength="0" exp_strength="0"/>
+    <constraint constraints="0" field="photo_timestamp_with_offset" notnull_strength="0" unique_strength="0" exp_strength="0"/>
+    <constraint constraints="0" field="photo_focal_length_35mm" notnull_strength="0" unique_strength="0" exp_strength="0"/>
+    <constraint constraints="0" field="photo_angle" notnull_strength="0" unique_strength="0" exp_strength="0"/>
+    <constraint constraints="0" field="track_seg_point_id" notnull_strength="0" unique_strength="0" exp_strength="0"/>
+    <constraint constraints="0" field="ele" notnull_strength="0" unique_strength="0" exp_strength="0"/>
+    <constraint constraints="0" field="time" notnull_strength="0" unique_strength="0" exp_strength="0"/>
+    <constraint constraints="0" field="hdop" notnull_strength="0" unique_strength="0" exp_strength="0"/>
+    <constraint constraints="0" field="additional_photo_data_photo_title" notnull_strength="0" unique_strength="0" exp_strength="0"/>
+    <constraint constraints="0" field="additional_photo_data_target_point_east" notnull_strength="0" unique_strength="0" exp_strength="0"/>
+    <constraint constraints="0" field="additional_photo_data_target_point_north" notnull_strength="0" unique_strength="0" exp_strength="0"/>
   </constraints>
   <constraintExpressions>
-    <constraint desc="" exp="" field="photo"/>
-    <constraint desc="" exp="" field="filename"/>
-    <constraint desc="" exp="" field="directory"/>
-    <constraint desc="" exp="" field="photo_timestamp"/>
-    <constraint desc="" exp="" field="photo_timestamp_with_offset"/>
-    <constraint desc="" exp="" field="photo_focal_length_35mm"/>
-    <constraint desc="" exp="" field="track_seg_point_id"/>
-    <constraint desc="" exp="" field="ele"/>
-    <constraint desc="" exp="" field="time"/>
-    <constraint desc="" exp="" field="hdop"/>
-    <constraint desc="" exp="" field="additional_photo_data_photo_title"/>
-    <constraint desc="" exp="" field="additional_photo_data_target_point_east"/>
-    <constraint desc="" exp="" field="additional_photo_data_target_point_north"/>
+    <constraint field="photo" desc="" exp=""/>
+    <constraint field="filename" desc="" exp=""/>
+    <constraint field="directory" desc="" exp=""/>
+    <constraint field="photo_timestamp" desc="" exp=""/>
+    <constraint field="photo_timestamp_with_offset" desc="" exp=""/>
+    <constraint field="photo_focal_length_35mm" desc="" exp=""/>
+    <constraint field="photo_angle" desc="" exp=""/>
+    <constraint field="track_seg_point_id" desc="" exp=""/>
+    <constraint field="ele" desc="" exp=""/>
+    <constraint field="time" desc="" exp=""/>
+    <constraint field="hdop" desc="" exp=""/>
+    <constraint field="additional_photo_data_photo_title" desc="" exp=""/>
+    <constraint field="additional_photo_data_target_point_east" desc="" exp=""/>
+    <constraint field="additional_photo_data_target_point_north" desc="" exp=""/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
     <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
   </attributeactions>
-  <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="&quot;filename&quot;">
+  <attributetableconfig sortExpression="&quot;filename&quot;" sortOrder="0" actionWidgetStyle="dropDown">
     <columns>
-      <column hidden="0" name="photo" type="field" width="595"/>
-      <column hidden="0" name="filename" type="field" width="618"/>
-      <column hidden="0" name="directory" type="field" width="-1"/>
-      <column hidden="0" name="photo_timestamp" type="field" width="-1"/>
-      <column hidden="0" name="photo_timestamp_with_offset" type="field" width="-1"/>
-      <column hidden="0" name="track_seg_point_id" type="field" width="-1"/>
-      <column hidden="0" name="ele" type="field" width="-1"/>
-      <column hidden="0" name="time" type="field" width="-1"/>
-      <column hidden="0" name="hdop" type="field" width="-1"/>
-      <column hidden="0" name="photo_focal_length_35mm" type="field" width="-1"/>
-      <column hidden="0" name="additional_photo_data_photo_title" type="field" width="-1"/>
-      <column hidden="0" name="additional_photo_data_target_point_east" type="field" width="-1"/>
-      <column hidden="0" name="additional_photo_data_target_point_north" type="field" width="-1"/>
-      <column hidden="1" type="actions" width="-1"/>
+      <column name="photo" type="field" width="595" hidden="0"/>
+      <column name="filename" type="field" width="618" hidden="0"/>
+      <column name="directory" type="field" width="-1" hidden="0"/>
+      <column name="photo_timestamp" type="field" width="-1" hidden="0"/>
+      <column name="photo_timestamp_with_offset" type="field" width="-1" hidden="0"/>
+      <column name="track_seg_point_id" type="field" width="-1" hidden="0"/>
+      <column name="ele" type="field" width="-1" hidden="0"/>
+      <column name="time" type="field" width="-1" hidden="0"/>
+      <column name="hdop" type="field" width="-1" hidden="0"/>
+      <column name="photo_focal_length_35mm" type="field" width="-1" hidden="0"/>
+      <column name="additional_photo_data_photo_title" type="field" width="-1" hidden="0"/>
+      <column name="additional_photo_data_target_point_east" type="field" width="-1" hidden="0"/>
+      <column name="additional_photo_data_target_point_north" type="field" width="-1" hidden="0"/>
+      <column name="photo_angle" type="field" width="-1" hidden="0"/>
+      <column type="actions" width="-1" hidden="1"/>
     </columns>
   </attributetableconfig>
   <conditionalstyles>
@@ -409,86 +421,86 @@ def my_form_open(dialog, layer, feature):
   <featformsuppress>0</featformsuppress>
   <editorlayout>tablayout</editorlayout>
   <attributeEditorForm>
-    <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-      <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+    <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+      <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
     </labelStyle>
-    <attributeEditorContainer collapsedExpression="" groupBox="1" visibilityExpressionEnabled="0" columnCount="1" collapsed="0" name="Photo" collapsedExpressionEnabled="0" visibilityExpression="" showLabel="1">
-      <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-        <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+    <attributeEditorContainer name="Photo" visibilityExpressionEnabled="0" collapsedExpressionEnabled="0" collapsed="0" groupBox="1" showLabel="1" visibilityExpression="" columnCount="1" collapsedExpression="">
+      <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+        <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
       </labelStyle>
-      <attributeEditorField index="0" name="photo" showLabel="1">
-        <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-          <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+      <attributeEditorField name="photo" index="0" showLabel="1">
+        <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+          <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
         </labelStyle>
       </attributeEditorField>
-      <attributeEditorContainer collapsedExpression="" groupBox="1" visibilityExpressionEnabled="0" columnCount="2" collapsed="0" name="" collapsedExpressionEnabled="0" visibilityExpression="" showLabel="1">
-        <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-          <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+      <attributeEditorContainer name="" visibilityExpressionEnabled="0" collapsedExpressionEnabled="0" collapsed="0" groupBox="1" showLabel="1" visibilityExpression="" columnCount="2" collapsedExpression="">
+        <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+          <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
         </labelStyle>
-        <attributeEditorField index="1" name="filename" showLabel="1">
-          <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-            <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+        <attributeEditorField name="filename" index="1" showLabel="1">
+          <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+            <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField index="10" name="additional_photo_data_photo_title" showLabel="1">
-          <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-            <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+        <attributeEditorField name="additional_photo_data_photo_title" index="11" showLabel="1">
+          <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+            <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField index="2" name="directory" showLabel="1">
-          <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-            <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+        <attributeEditorField name="directory" index="2" showLabel="1">
+          <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+            <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField index="3" name="photo_timestamp" showLabel="1">
-          <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-            <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+        <attributeEditorField name="photo_timestamp" index="3" showLabel="1">
+          <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+            <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField index="4" name="photo_timestamp_with_offset" showLabel="1">
-          <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-            <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+        <attributeEditorField name="photo_timestamp_with_offset" index="4" showLabel="1">
+          <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+            <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField index="5" name="photo_focal_length_35mm" showLabel="1">
-          <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-            <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+        <attributeEditorField name="photo_focal_length_35mm" index="5" showLabel="1">
+          <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+            <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField index="11" name="additional_photo_data_target_point_east" showLabel="1">
-          <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-            <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+        <attributeEditorField name="additional_photo_data_target_point_east" index="12" showLabel="1">
+          <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+            <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField index="12" name="additional_photo_data_target_point_north" showLabel="1">
-          <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-            <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+        <attributeEditorField name="additional_photo_data_target_point_north" index="13" showLabel="1">
+          <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+            <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
           </labelStyle>
         </attributeEditorField>
       </attributeEditorContainer>
     </attributeEditorContainer>
-    <attributeEditorContainer collapsedExpression="" groupBox="1" visibilityExpressionEnabled="0" columnCount="2" collapsed="0" name="Track  Point" collapsedExpressionEnabled="0" visibilityExpression="" showLabel="1">
-      <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-        <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+    <attributeEditorContainer name="Track  Point" visibilityExpressionEnabled="0" collapsedExpressionEnabled="0" collapsed="0" groupBox="1" showLabel="1" visibilityExpression="" columnCount="2" collapsedExpression="">
+      <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+        <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
       </labelStyle>
-      <attributeEditorField index="6" name="track_seg_point_id" showLabel="1">
-        <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-          <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+      <attributeEditorField name="track_seg_point_id" index="7" showLabel="1">
+        <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+          <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
         </labelStyle>
       </attributeEditorField>
-      <attributeEditorField index="9" name="hdop" showLabel="1">
-        <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-          <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+      <attributeEditorField name="hdop" index="10" showLabel="1">
+        <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+          <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
         </labelStyle>
       </attributeEditorField>
-      <attributeEditorField index="8" name="time" showLabel="1">
-        <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-          <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+      <attributeEditorField name="time" index="9" showLabel="1">
+        <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+          <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
         </labelStyle>
       </attributeEditorField>
-      <attributeEditorField index="7" name="ele" showLabel="1">
-        <labelStyle overrideLabelFont="0" labelColor="0,0,0,255" overrideLabelColor="0">
-          <labelFont bold="0" strikethrough="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" italic="0" style="" underline="0"/>
+      <attributeEditorField name="ele" index="8" showLabel="1">
+        <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
+          <labelFont italic="0" description="Noto Sans,10,-1,0,50,0,0,0,0,0" style="" underline="0" bold="0" strikethrough="0"/>
         </labelStyle>
       </attributeEditorField>
     </attributeEditorContainer>
@@ -502,6 +514,7 @@ def my_form_open(dialog, layer, feature):
     <field name="filename" editable="0"/>
     <field name="hdop" editable="0"/>
     <field name="photo" editable="1"/>
+    <field name="photo_angle" editable="1"/>
     <field name="photo_focal_length_35mm" editable="0"/>
     <field name="photo_timestamp" editable="0"/>
     <field name="photo_timestamp_with_offset" editable="0"/>
@@ -509,34 +522,36 @@ def my_form_open(dialog, layer, feature):
     <field name="track_seg_point_id" editable="0"/>
   </editable>
   <labelOnTop>
-    <field labelOnTop="0" name="additional_photo_data_photo_title"/>
-    <field labelOnTop="0" name="additional_photo_data_target_point_east"/>
-    <field labelOnTop="0" name="additional_photo_data_target_point_north"/>
-    <field labelOnTop="0" name="directory"/>
-    <field labelOnTop="0" name="ele"/>
-    <field labelOnTop="0" name="filename"/>
-    <field labelOnTop="0" name="hdop"/>
-    <field labelOnTop="1" name="photo"/>
-    <field labelOnTop="0" name="photo_focal_length_35mm"/>
-    <field labelOnTop="0" name="photo_timestamp"/>
-    <field labelOnTop="0" name="photo_timestamp_with_offset"/>
-    <field labelOnTop="0" name="time"/>
-    <field labelOnTop="0" name="track_seg_point_id"/>
+    <field name="additional_photo_data_photo_title" labelOnTop="0"/>
+    <field name="additional_photo_data_target_point_east" labelOnTop="0"/>
+    <field name="additional_photo_data_target_point_north" labelOnTop="0"/>
+    <field name="directory" labelOnTop="0"/>
+    <field name="ele" labelOnTop="0"/>
+    <field name="filename" labelOnTop="0"/>
+    <field name="hdop" labelOnTop="0"/>
+    <field name="photo" labelOnTop="1"/>
+    <field name="photo_angle" labelOnTop="0"/>
+    <field name="photo_focal_length_35mm" labelOnTop="0"/>
+    <field name="photo_timestamp" labelOnTop="0"/>
+    <field name="photo_timestamp_with_offset" labelOnTop="0"/>
+    <field name="time" labelOnTop="0"/>
+    <field name="track_seg_point_id" labelOnTop="0"/>
   </labelOnTop>
   <reuseLastValue>
-    <field reuseLastValue="0" name="additional_photo_data_photo_title"/>
-    <field reuseLastValue="0" name="additional_photo_data_target_point_east"/>
-    <field reuseLastValue="0" name="additional_photo_data_target_point_north"/>
-    <field reuseLastValue="0" name="directory"/>
-    <field reuseLastValue="0" name="ele"/>
-    <field reuseLastValue="0" name="filename"/>
-    <field reuseLastValue="0" name="hdop"/>
-    <field reuseLastValue="0" name="photo"/>
-    <field reuseLastValue="0" name="photo_focal_length_35mm"/>
-    <field reuseLastValue="0" name="photo_timestamp"/>
-    <field reuseLastValue="0" name="photo_timestamp_with_offset"/>
-    <field reuseLastValue="0" name="time"/>
-    <field reuseLastValue="0" name="track_seg_point_id"/>
+    <field name="additional_photo_data_photo_title" reuseLastValue="0"/>
+    <field name="additional_photo_data_target_point_east" reuseLastValue="0"/>
+    <field name="additional_photo_data_target_point_north" reuseLastValue="0"/>
+    <field name="directory" reuseLastValue="0"/>
+    <field name="ele" reuseLastValue="0"/>
+    <field name="filename" reuseLastValue="0"/>
+    <field name="hdop" reuseLastValue="0"/>
+    <field name="photo" reuseLastValue="0"/>
+    <field name="photo_angle" reuseLastValue="0"/>
+    <field name="photo_focal_length_35mm" reuseLastValue="0"/>
+    <field name="photo_timestamp" reuseLastValue="0"/>
+    <field name="photo_timestamp_with_offset" reuseLastValue="0"/>
+    <field name="time" reuseLastValue="0"/>
+    <field name="track_seg_point_id" reuseLastValue="0"/>
   </reuseLastValue>
   <dataDefinedFieldProperties/>
   <widgets/>
