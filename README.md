@@ -168,7 +168,17 @@ Here are a few explanations around the two branches within the model (branch "A"
 #### Branch A:
 1. we start with the "Photo_Folder" model input, which corresponds to a folder in the file system containing jpeg photo files.
 2. "Import geotagged photos": this algorithm reads all image files in a folder and imports photo information into a table. There are two outputs: one for images already containing georeferencing data, and the other for photos not containing georeferencing data. In our case all goes in the non-georeferenced output. Note that although you don't need the "Trash photos" output (results in an empty table in our case), you should not remove it, because otherwise no photos end up in the other output. This is just the way the algorithm is implemented. The other peculiarity is, that the non-georeferenced output doesn't extract the time-stamp EXIF data we need, so we need to extract the time stamp information in a separate step.
-3. "Refactor fields photos": here we extract the EXIF timestamp information, add the "Photo Time Offset" (in seconds) and calculate an "epoch" value from the corrected time stamp. This can be done with the following expression: `epoch(exif(photo,'Exif.Photo.DateTimeOriginal') + to_interval(@photo_time_offset || ' seconds'))`. Epoch is the duration starting from 1970-01-01 00:00:00 expressed in milliseconds. It is a simple way to accurately represent time in a simple integer value.
+3. "Refactor fields photos": here we extract the EXIF timestamp information, add the "Photo Time Offset" (in seconds) and calculate an "epoch" value from the corrected time stamp. This can be done with the following expression: `epoch(exif(photo,'Exif.Photo.DateTimeOriginal') + to_interval(@photo_time_offset || ' seconds'))`. Epoch is the duration starting from 1970-01-01 00:00:00 expressed in milliseconds. It is a simple way to accurately represent time in a simple integer value. Finally, we also need to calculate the photo viewing angle from the focal length in 35mm. We can use the following expression for this:
+```
+2 * 
+atan(
+    --36 mm is sensor size in 35mm equivalent for width of image
+	--portrait photos would have 24mm here. TODO: take into account portrait photos
+	(36 / 2) / exif(photo,'Exif.Photo.FocalLengthIn35mmFilm')
+)
+-- resulting value is in radians, need to calculate in degrees
+/ pi() * 180
+```
 4. "Create points layer from  photo table": this algorithms adds a point geometry column to a "no-geography" attribute table and picks up east and north coordinate values from an existing attribute or expression calculation.
 
 #### Branch B:
