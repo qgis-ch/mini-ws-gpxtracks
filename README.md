@@ -288,7 +288,7 @@ To create the photo wedges we can use the "wedge_buffer()" expression in combina
 		),
 		0
 	),
-	photo_focal_length_35mm,
+	photo_angle,
 	distance(
 		@geometry,
 		make_point(additional_photo_data_target_point_east, additional_photo_data_target_point_north)
